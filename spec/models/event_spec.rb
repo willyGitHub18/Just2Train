@@ -28,4 +28,27 @@ RSpec.describe Event, type: :model do
       expect(subject).to_not be_valid
     end
   end
+
+  # Use of reflect_on_association method which will return information about the given association
+  describe "Associations" do
+    it "has many event participants" do
+      assc = described_class.reflect_on_association(:event_participants)
+      expect(assc.macro).to eq :has_many
+    end
+
+    it "has many users" do
+      assc = described_class.reflect_on_association(:users)
+      expect(assc.macro).to eq :has_many
+    end
+
+    it "belongs to a location" do
+      assc = described_class.reflect_on_association(:location)
+      expect(assc.macro).to eq :belongs_to
+    end
+
+    it "belongs to an activity" do
+      assc = described_class.reflect_on_association(:activity)
+      expect(assc.macro).to eq :belongs_to
+    end
+  end
 end
