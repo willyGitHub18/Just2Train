@@ -1,10 +1,12 @@
 // Nav bar
+
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #003552ff;
+    background-color: #027aff;
 }
 
 .navbar li {
@@ -20,9 +22,5 @@
 }
 
 .navbar li a:hover {
-    background-color: #111;
+    background-color: #ff5223;
 }
-
-// #center-title-navbar{
-//   float: center;
-// }
