@@ -14,4 +14,22 @@ RSpec.describe Activity, type: :model do
       expect(subject).to_not be_valid
     end
   end
+
+  # Use of reflect_on_association method which will return information about the given association
+  describe "Associations" do
+    it "has many events" do
+      assc = described_class.reflect_on_association(:events)
+      expect(assc.macro).to eq :has_many
+    end
+
+    it "has many user activities" do
+      assc = described_class.reflect_on_association(:user_activities)
+      expect(assc.macro).to eq :has_many
+    end
+
+    it "has many users" do
+      assc = described_class.reflect_on_association(:users)
+      expect(assc.macro).to eq :has_many
+    end
+  end
 end
