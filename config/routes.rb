@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  get '/about', to: 'static_pages#about'
+
   resources :events
 
 end
