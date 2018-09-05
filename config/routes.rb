@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+  get 'events/show'
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
