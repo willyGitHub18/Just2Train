@@ -69,3 +69,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+# Bootstrap 4 ruby gem for Ruby on Rails
+gem 'bootstrap', '~> 4.1.3'
+
+# Bootstrap JavaScript depends on jQuery
+gem 'jquery-rails'
