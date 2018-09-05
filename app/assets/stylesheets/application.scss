@@ -12,4 +12,8 @@
  *
 
  */
- @import 'components/global'
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+// Custom css for global elements
+@import "components/global";
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
