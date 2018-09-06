@@ -1,49 +1,20 @@
+
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 20px;
-  padding-top: 50px;
+   height: 200px;
+   width: 100%;
+   display: flex;
+   margin: 0 auto;  
+   background-color: #2d3142;
+   color: #FFECE0;
+   align-items: flex-end;
+   justify-content: space-around;
+   font-size: 10px;
 }
 
 .footer-left {
-  display: flex;
-  padding-bottom: 15px;
+  text-align: left;
 }
 
-// Style des icones réseaux sociaux
-.social-items {
-  list-style-type: none;
-}
+.footer-right {
 
-.social-items li {
-  display: inline-block;
-  padding: 0px 8px;
-}
-
-.fa {
-  padding: 5px;
-  font-size: 20px;
-  width: 15%;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-  color: white;
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-@media only screen and (max-width: 575px) {
-  // For mobile phone
-  .fa {
-    padding: 1px;
-    font-size: 20px;
-    width: 2%;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    color: white;
-  }
 }

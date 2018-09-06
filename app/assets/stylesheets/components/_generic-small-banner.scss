@@ -1,0 +1,42 @@
+.small-banner {
+  min-height: 60vh;
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 68%, rgba(78,120,173,0.47102591036414565) 100%), image-url('just2train-banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EBECEE;
+  display :flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.container-intro {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  margin-top: 50px;
+  z-index: auto;
+
+}
+
+.intro h2 {
+text-align: center;
+
+}
+
+.intro h3 {
+display:inline-block;
+}
+
+.illustration {
+  width: 40%;
+  display:inline-block;
+ }
+
+ .illustration img {
+  margin-top: 20px;
+  width: 100%;
+  vertical-align: middle;
+ }
