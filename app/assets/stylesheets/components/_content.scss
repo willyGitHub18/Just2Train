@@ -1,0 +1,87 @@
+.small-banner {
+  min-height: 60vh;
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 68%, rgba(78,120,173,0.47102591036414565) 100%), image-url('just2train-banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EBECEE;
+  display :flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.container-intro {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  margin-top: 50px;
+  z-index: auto;
+
+}
+
+.intro h2 {
+text-align: center;
+
+}
+
+.intro h3 {
+display:inline-block;
+}
+
+.illustration {
+  width: 40%;
+  display:inline-block;
+ }
+
+ .illustration img {
+  margin-top: 20px;
+  width: 100%;
+  vertical-align: middle;
+ }
+
+.content {
+  margin-top: 25px;
+  display:inline-block;
+  vertical-align: middle;
+  padding-left: 45px;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  width: 50%;
+  text-align:justify;
+  text-justify: auto;
+}
+
+
+@media screen and (max-width: 700px) {
+  .container-intro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  .illustration {
+    margin: 0 auto;
+    width: 80%;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .content {
+    display: flex; flex-direction: column;
+    margin: 0;
+    width: 100%; text-align:justify; text-justify:auto;
+    float:left;
+    padding-left: 0px;
+  }
+  .illustration {
+    display:flex; flex-direction: column; justify-content: center;
+  }
+  .illustration img {
+    display:flex; flex-direction: column; justify-content: center;
+  }
+}
