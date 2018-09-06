@@ -12,14 +12,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    chosen_activity = Activity.find(params[:activity_id])
-    chosen_location = Location.find(params[:location_id])
-
-    @event = Event.new
-    @event.activity = chosen_activity
-    @event.location = chosen_location
+    @event = Event.new(event_params)
     @event.save
-    redirect_to event_path
   end
 
   private
