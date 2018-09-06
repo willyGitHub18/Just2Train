@@ -1,10 +1,1 @@
-<%= form_with model: @event do |f| %>
-  <%= f.text_field :name, placeholder: "Name of the event" %><br />
-  <%= f.text_field :price, placeholder: "Price" %><br />
-  <%= f.date_field :date %><br />
-  <%= f.text_field :nb_participant, placeholder: "Number of participants" %><br />
-  <%= f.text_field :level, placeholder: "Level of practice" %><br />
-  <%= f.time_field :time %><br />
-  <%= f.collection_select :activity_id, Activity.order(:activity_name), :id, :activity_name, prompt: "Select an activity" %><br />
-  <%= f.submit "Create" %>
-<% end %>
+
