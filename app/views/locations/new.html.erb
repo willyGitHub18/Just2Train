@@ -11,11 +11,12 @@
   <% end %>
 
   <%= l.label "Address:" %><br />
+  <input type="text" placeholder="Address" id="autocomplete_address"><br />
   <%= l.text_field :category, placeholder: "Location Type (indoor, outdoor, field, ...)" %>
   <%= l.text_field :place_name, placeholder: "Location Name" %><br />
-  <%= l.text_field :street1, placeholder: "Address Line 1" %>
+  <%= l.text_field :street1, placeholder: "Address Line 1", id: :route %>
   <%= l.text_field :street2, placeholder: "Address Line 2" %><br />
-  <%= l.text_field :city, placeholder: "City" %>
-  <%= l.text_field :zip, placeholder: "Zip/Postal Code" %>
+  <%= l.text_field :city, placeholder: "City", id: :locality %>
+  <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
   <%= l.submit "Create" %>
 <% end %>
