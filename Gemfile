@@ -77,7 +77,7 @@ gem 'devise'
 gem "geocoder"
 
 # Data protection
-gem "dotenv"
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bootstrap 4 ruby gem for Ruby on Rails
 gem 'bootstrap', '~> 4.1.3'
