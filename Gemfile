@@ -70,7 +70,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# User management
 gem 'devise'
+
+# Maps API
+gem "geocoder"
+gem "figaro"
 
 # Bootstrap 4 ruby gem for Ruby on Rails
 gem 'bootstrap', '~> 4.1.3'
