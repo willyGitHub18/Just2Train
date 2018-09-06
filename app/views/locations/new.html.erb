@@ -1,0 +1,22 @@
+<%= form_with model: @location do |l| %>
+
+  <%= l.fields_for :events do |e| %>
+    <%= e.text_field :name, placeholder: "Name of the event" %><br />
+    <%= e.text_field :price, placeholder: "Price" %><br />
+    <%= e.date_field :date %><br />
+    <%= e.text_field :nb_participant, placeholder: "Number of participants" %><br />
+    <%= e.text_field :level, placeholder: "Level of practice" %><br />
+    <%= e.time_field :time %><br />
+    <%= e.collection_select :activity_id, Activity.order(:activity_name), :id, :activity_name, prompt: "Select an activity" %><br />
+  <% end %>
+
+  <%= l.label "Address:" %><br />
+  <input type="text" placeholder="Address" id="autocomplete_address"><br />
+  <%= l.text_field :category, placeholder: "Location Type (indoor, outdoor, field, ...)" %>
+  <%= l.text_field :place_name, placeholder: "Location Name" %><br />
+  <%= l.text_field :street1, placeholder: "Address Line 1", id: :route %>
+  <%= l.text_field :street2, placeholder: "Address Line 2" %><br />
+  <%= l.text_field :city, placeholder: "City", id: :locality %>
+  <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
+  <%= l.submit "Create" %>
+<% end %>
