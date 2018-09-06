@@ -75,7 +75,9 @@ gem 'devise'
 
 # Maps API
 gem "geocoder"
-gem "figaro"
+
+# Data protection
+gem "dotenv"
 
 # Bootstrap 4 ruby gem for Ruby on Rails
 gem 'bootstrap', '~> 4.1.3'
