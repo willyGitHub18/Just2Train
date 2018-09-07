@@ -21,6 +21,7 @@ function initializeAutocomplete(id) {
         }
       }
     }
+    document.getElementById('route').value = place.address_components[0]['long_name'] + ' ' + place.address_components[1]['long_name'];
   }
 
   google.maps.event.addDomListener(window, 'load', function() {
