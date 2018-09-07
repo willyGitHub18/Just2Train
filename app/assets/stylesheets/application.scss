@@ -28,9 +28,24 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #ebecee;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Fira Sans Condensed', sans-serif;
 font-weight: bolder;
+}
+
+
+html, body {
+ height: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+#container-body {
+ flex: 1 0 auto;
+ height: 100vh;
 }
