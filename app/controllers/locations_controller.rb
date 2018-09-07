@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @location = Location.new
     # Needed to seed the form with inputs of events
@@ -8,6 +9,8 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     @location.save
+    flash[:success] = "Congrats, your event has been created"
+    redirect_to 'root_url'
   end
 
   private
