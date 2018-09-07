@@ -15,5 +15,15 @@ RSpec.describe "Event request", :type => :request do
       get events_path
       expect(response).to_not render_template(:show)
     end
+
+    it "displays the event's page" do
+      get events_path
+      expect(response).to render_template(:index)
+    end
+
+    it "does not render a different template" do
+      get events_path
+      expect(response).to_not render_template(:show)
+    end
   end
 end
