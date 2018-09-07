@@ -53,3 +53,22 @@ input#user_remember_me {
   width: 15px;
   height: 15px;
 }
+
+#location_events_attributes_0_activity_id{
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+div.field.two-inline{
+  display: inline-flex;
+}
+
+#location_events_attributes_0_nb_participant, #locality {
+  width: 140px;
+  margin-right: 8px;
+}
+
+#location_events_attributes_0_price, #postal_code {
+  width: 140px;
+  margin-left: 8px;
+}
