@@ -4,6 +4,6 @@
   <h2><%= event.date %> <%= event.time %> <%= event.price %></h2>
   <p><%= event.activity_id %> <%= event.location_id %> <%= event.level %></p>
   <br>
-  <%= link_to 'Read More', locations_path(event) %>
+  <%= link_to 'Read More', "/event/"+event.id.to_s %>
  </div>
 <% end %>
