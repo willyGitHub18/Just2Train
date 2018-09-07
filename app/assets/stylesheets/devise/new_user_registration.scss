@@ -18,6 +18,12 @@
   margin-top: 50px;
   margin-bottom: 50px;
   background-color: #003552;
+  -moz-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  -webkit-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  box-shadow: 2px 2px 5px 0px #9b9b9b;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=134, Strength=5);
+  border-radius: 5px;
 }
 
 input{
@@ -41,4 +47,9 @@ textarea {
 .actions .btn-primary {
   width: 200px;
   border-radius: 0px
+}
+
+input#user_remember_me {
+  width: 15px;
+  height: 15px;
 }

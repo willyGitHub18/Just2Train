@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @location = Location.new
     # Needed to seed the form with inputs of events
