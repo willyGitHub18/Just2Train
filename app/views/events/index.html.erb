@@ -1,9 +1,31 @@
-<% @events.each do |event| %>
- <div class="#">
-  <h1><%= event.name %></h1>
-  <h2><%= event.date %> <%= event.time %> <%= event.price %></h2>
-  <p><%= event.activity_id %> <%= event.location_id %> <%= event.level %></p>
-  <br>
-  <%= link_to 'Read More', "/event/"+event.id.to_s %>
- </div>
-<% end %>
+<%= render 'shared/navbar' %>
+
+<div class="event-wrapper">
+    <div class="event-container">
+            <% @events.each do |event| %>
+            <div class="event-grid">
+                <div class="event-element">
+                    <div class="event-image">
+                      <%= image_tag 'coupon.jpg', class: "picture-activity" %>
+                    </div>
+                    <div class="event-content">
+                        <time class="event-period">
+                            <%= event.date.strftime("%a, %d %b") %> AT <%= event.time.strftime("%H:%M") %>
+                        </time>
+                        <div class="event-title"><%= event.name %></div>
+                        <div class="event-description">
+                            <p><%= event.location.place_name %> <%= event.location.city %></p>
+                            <p><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
+                            <p>Level: <%= event.level %> - Price: <%= number_to_currency(event.price) %></p>
+                        </div>
+                        <div class="event-footer">
+                            <%= link_to 'Read More', "/event/"+event.id.to_s %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+    </div>
+</div>
+
+<%= render 'shared/footer' %>
