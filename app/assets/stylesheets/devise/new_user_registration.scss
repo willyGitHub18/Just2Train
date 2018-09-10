@@ -64,13 +64,13 @@ div.field.two-inline{
 }
 
 // Champs du left
-#location_events_attributes_0_nb_participant, #locality, #user_city {
+#location_events_attributes_0_nb_participant, #locality, #user_city, #location_events_attributes_0_date {
   width: 140px;
   margin-right: 8px;
 }
 
 // Champs du right
-#location_events_attributes_0_price, #postal_code, #user_zip {
+#location_events_attributes_0_price, #postal_code, #user_zip, #location_events_attributes_0_time {
   width: 140px;
   margin-left: 8px;
 }
