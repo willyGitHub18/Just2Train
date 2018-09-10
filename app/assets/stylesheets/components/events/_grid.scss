@@ -1,0 +1,39 @@
+.events-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px 50px;
+}
+
+.events-grid {
+  padding: 15px;
+}
+
+.events-element {
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+}
+
+.picture-activity {
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.events-period {
+  color: #FF5223
+}
+
+.events-title {
+  font-weight: bold;
+}
+
+.events-description {
+  font-size: 14px;
+}
+
+.events-description p {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
