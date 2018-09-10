@@ -1,4 +1,3 @@
-.event-container {
 .events-container {
   display: flex;
   justify-content: center;
@@ -6,12 +5,10 @@
   margin: 50px 50px;
 }
 
-.event-grid {
 .events-grid {
   padding: 15px;
 }
 
-.event-element {
 .events-element {
   box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
 }
