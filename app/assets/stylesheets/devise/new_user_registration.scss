@@ -63,12 +63,14 @@ div.field.two-inline{
   display: inline-flex;
 }
 
-#location_events_attributes_0_nb_participant, #locality {
+// Champs du left
+#location_events_attributes_0_nb_participant, #locality, #user_city {
   width: 140px;
   margin-right: 8px;
 }
 
-#location_events_attributes_0_price, #postal_code {
+// Champs du right
+#location_events_attributes_0_price, #postal_code, #user_zip {
   width: 140px;
   margin-left: 8px;
 }
