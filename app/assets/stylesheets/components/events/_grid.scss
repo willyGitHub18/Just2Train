@@ -1,4 +1,5 @@
 .event-container {
+.events-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -6,10 +7,12 @@
 }
 
 .event-grid {
+.events-grid {
   padding: 15px;
 }
 
 .event-element {
+.events-element {
   box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
 }
 
@@ -21,19 +24,19 @@
   height: 300px;
 }
 
-.event-period {
+.events-period {
   color: #FF5223
 }
 
-.event-title {
+.events-title {
   font-weight: bold;
 }
 
-.event-description {
+.events-description {
   font-size: 14px;
 }
 
-.event-description p {
+.events-description p {
   margin-bottom: 0;
   padding-bottom: 10px;
 }
