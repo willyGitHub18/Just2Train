@@ -9,6 +9,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @users = User.all
+    @conversations = Conversation.all
   end
 
   private
