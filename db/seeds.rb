@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Activity.create([{ activity_name: "Futsal" }, { activity_name: "Cyclisme" }, { activity_name: "Running" }, { activity_name: "Basketball" }, { activity_name: "Football" }])
-Location.create([{ street1: "Rue de Montchat", city: "Lyon", zip: "69008" }, { street1: "Rue de Paul", city: "Lyon", zip: "69002" }])
 
 password = 'qwerty'
 1.upto(5) do |i|
