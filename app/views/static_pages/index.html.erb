@@ -1,24 +1,34 @@
-<!-- Calls the header in layouts -->
+<!-- Main wrapper -->
 <div class="wrapper">
+<!-- Navbar -->
 <%= render 'shared/navbar' %>
+  <!-- Body container -->
+  <body>
+      <!-- Hero fullwidth -->
+      <section id="section1" class="home">
+          <%= render 'shared/banner' %>
+      </section>
+      <!-- End of hero -->
 
-<div class="container body">
-
-    <section id="section1" class="home">
-        <%= render 'shared/banner' %>
-    </section>
-
-    <section id="section2" class="about">
-      <%= render 'shared/content' %>
+    <!-- Container for content  -->
+    <div>
+      <section id="section2" class="about">
+        <%= render 'shared/content' %>
       </section>
 
-    <section id="section3" class="card-team">
-    </section>
+      <section id="section3" class="card-team">
+      </section>
 
-    <section id="section4" class="footer">
+
+
+    </div><!-- End of container for content -->
+
+    <!-- Footer -->
+    <footer>
       <%= render 'shared/footer' %>
-    </section>
-
+    </footer>
+    <!-- End of footer -->
+  </body>
+  <!-- End of body -->
 </div>
-
-</div>
+<!-- End of main wrapper -->
