@@ -1,16 +1,17 @@
 
-.footer {
-   height: 200px;
+footer {
+   height: 150px;
    width: 100%;
    display: flex;
    margin: 0 auto;
-   background-color: #2d3142;
+   background-color: #2d3142 ;
    color: #FFECE0;
    align-items: flex-end;
    justify-content: space-around;
    font-size: 10px;
    bottom: 0px;
-
+   position: relative;
+   margin-top: auto;
 }
 
 .footer-left {
