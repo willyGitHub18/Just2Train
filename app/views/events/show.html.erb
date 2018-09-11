@@ -21,7 +21,7 @@
                 <%= link_to 'Count me in', event_participants_path(:event_id => @event.id), class: "btn btn-block btn-dark", method: :post %>
             </div>
             <div class="event-date">
-                <span><%= @event.date.strftime("%a, %d %b") %> AT <%= @event.time.strftime("%H:%M") %></span>
+                <span><%= @event.date.strftime("%A") %> at <%= @event.time.strftime("%H:%M") %></span>
             </div>
             <div class="event-location">
                 <span><%= @event.location.place_name %></span>
