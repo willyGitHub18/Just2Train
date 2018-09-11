@@ -9,8 +9,8 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     @location.save
+    redirect_to events_path
     flash[:success] = "Congrats, your event has been created"
-    redirect_to @location
   end
 
   def edit
@@ -20,8 +20,8 @@ class LocationsController < ApplicationController
   def update
     @location = Location.find(params[:id])
     if @location.update_attributes(location_params)
-      flash|:success] = "Event updated"
-      redirect_to @location
+      flash[:success] = "Event updated"
+      redirect_to events_path
     else
       render 'edit'
     end

@@ -1,0 +1,59 @@
+<%= render 'shared/navbar' %>
+
+
+<div id="container-body">
+  <div class="form-container">
+    <div class="title-container">
+      <h2>Update your Meet Up</h2>
+        <div>
+        <%= form_with model: @location do |l| %>
+
+          <%= l.fields_for :events do |e| %>
+
+          <div class="container-name">
+          <div class="field " label>
+            <%= e.text_field :name, placeholder: "Name of the event" %>
+            <%= e.collection_select :activity_id, Activity.order(:activity_name), :id, :activity_name, prompt: "Select an activity" %><br />
+          </div>
+
+          <div class="field two-inline">
+            <%= e.text_field :nb_participant, placeholder: "N of participants"%><br />
+            <%= e.text_field :price, placeholder: "Price" %><br />
+          </div>
+
+          <div class="field">
+            <%= e.date_field :date %>
+            <%= e.time_field :time %><br />
+            <%= e.text_field :level, placeholder: "Level of practice" %><br />
+          </div>
+          <% end %>
+
+          <div class="field">
+            <input type="text" placeholder="Address" id="autocomplete_address"><br />
+            <%= l.text_field :category, placeholder: "Location Type (indoor, outdoor, field, ...)" %>
+            <%= l.text_field :place_name, placeholder: "Location Name" %><br />
+            <%= l.text_field :street1, placeholder: "Address Line 1", id: :route %>
+            <%= l.text_field :street2, placeholder: "Address Line 2" %><br />
+            <div class="field two-inline">
+            <%= l.text_field :city, placeholder: "City", id: :locality %>
+            <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
+            </div>
+            <%= l.submit "Save changes" %>
+          <% end %>
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section id="section4" class="footer">
+  <%= render 'shared/footer' %>
+</section>
+
+</div> <!--End of wrapper -->
