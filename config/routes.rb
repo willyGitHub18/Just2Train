@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :events
   resources :locations
+  resources :event_participants
 
   resources :conversations do
     resources :messages
