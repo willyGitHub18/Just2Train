@@ -32,12 +32,13 @@
         <div class="event-description">
             <div id="mapid"></div>
             <script type="text/javascript">
-                var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+                var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
                 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX'] %>', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
                 id: 'mapbox.streets',
             }).addTo(mymap);
+            var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
             </script>
         </div>
 
