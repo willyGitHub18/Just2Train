@@ -11,11 +11,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def create
-    @event = Event.new(event_params)
-    @event.save
-  end
-
   private
     def event_params
       params.require(:event).permit(:name, :price, :date, :nb_participant, :level, :time, :activity_id, :location_id)
