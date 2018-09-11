@@ -12,29 +12,55 @@
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#">MEET UP</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#section3"></a>
+        <a class="nav-link" href="#">EVENTS</a>
       </li>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Edit Account", edit_user_registration_path %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        </li>
+        <div class="nav-link">
+          <li class="nav-item">
+            <%= link_to "CREATE A MEET UP", edit_user_registration_path %>
+          </li>
+        </div>
+
+        <div class="nav-link">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username.upcase %><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+                <li class="nav-item">
+                  <%= link_to "PROFIL", edit_user_registration_path %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "EDIT ACOUNT", edit_user_registration_path %>
+                </li>
+
+                <li class="nav-item">
+                  <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+          </li>
+        </ul>
+      </div>
       <% else %>
+        <div class="nav-link">
             <li class="nav-item">
               <%= link_to "SIGN IN", new_user_session_path %>
             </li>
-            <li class="nav-item">
+        </div>
+
+        <div class="nav-link">
+          <li class="nav-item">
               <%= link_to "SIGN UP", new_user_registration_path %>
             </li>
+          </div>
       <% end %>
+
+
+
       </ul>
       </div>
     </div>
