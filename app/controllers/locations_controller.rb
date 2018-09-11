@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.save
     flash[:success] = "Congrats, your event has been created"
-    redirect_to 'root_url'
+    redirect_to events_path
   end
 
   private

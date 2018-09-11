@@ -14,7 +14,21 @@
             <div class="event-detail">
                 <h1><%= @event.name %></h1>
                 <div class="event-org">
-                    <span><%= @event.activity.activity_name %> - <%= @event.nb_participant %> people</span>
+                    <span><%= @event.activity.activity_name %> - <%= @event.nb_participant %> people </span> 
+                    <span> 
+                        Participants : <% @event.event_participants.each do |participant| %>
+                        <%= participant.user.username %>
+                        <% end %>
+                    </span>
+                    <div>
+                        <% @event.event_participants.each do |participant| %>
+                            <% if participant.id != current_user.id %>
+                                <div class=”item”>
+                                    <%= link_to 'Contact ', conversations_path(sender_id: current_user.id, recipient_id: participant.id), method: 'post'%> <%= participant.user.username %> <%= participant.user.profile_picture %> 
+                                </div>
+                            <% end %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
             <div class="register-button">
