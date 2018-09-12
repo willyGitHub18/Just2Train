@@ -9,7 +9,6 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     @location.save
-    redirect_to events_path
     flash[:success] = "Congrats, your event has been created"
     redirect_to events_path
   end

@@ -138,6 +138,24 @@
     color: #EBECEE;
 }
 
+.label-about-opos{
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 26px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: #2D3142;
+}
+
+.label-about-desc-opos{
+      font-family: 'Fira Sans Condensed', sans-serif;
+    color: #2D3142;
+    margin: 0px;
+}
+
+
+
+
 .img-cards {
   height: 200px;
   width: 220px;
@@ -150,10 +168,11 @@
 
 .col-md-4{
   background-color: white;
-  height: 450px;
+  height: 400px;
   padding-top: 20px;
   max-width: 250px !important;
-  margin: 0 10px;
+  margin: 0 10px 10px;;
+
   -moz-box-shadow: 2px 2px 5px 0px #9b9b9b;
   -webkit-box-shadow: 2px 2px 5px 0px #9b9b9b;
   -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
