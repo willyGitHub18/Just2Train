@@ -1,4 +1,42 @@
+.event-container {
+  display: flex;
+  align-items: inherit;
+}
+
 .image-event {
   width: 100%;
-  height: 500px;
+  height: 200px;
+}
+
+.event-period {
+  margin :15px;
+  text-align: right;
+}
+
+.event-title-div {
+text-align: center;
+margin: 15px;
+}
+
+.event-title {
+  font-size: 40px;
+} 
+
+.button-events {
+  width: 130px;
+  padding: 10px;
+  margin: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #0d238f;
+  border: none;
+  box-shadow: #dafdff 0px 0px 10px 1px ;
+}
+.button-events-div {
+  text-align: center;
+}  
+
+.button-events:hover {
+  background-color: #4d6aff;
+  box-shadow: #ddfdff 0px 0px 10px 3px ;
 }

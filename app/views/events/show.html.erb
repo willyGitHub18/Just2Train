@@ -1,65 +1,76 @@
-<%= render 'shared/navbar' %>
+<!-- Main wrapper -->
+<div class="wrapper">
+    <!-- Navbar ------------------------->
+    <%= render 'shared/navbar' %>
+    
+    <body>  <!-- Body container -->
 
-<div class="event-wrapper">
-    <div class="event-container">
         <div class="event-image">
             <%= image_tag 'coupon.jpg', class: "image-event" %>
         </div>
 
-        <div class="event-info">
-            
-           
-            <div class="event-period">
-               
-                <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
-                
-            </div>
-            <div class="event-detail">
-                <h1><%= @event.name %></h1>
-                <div class="event-org">
-                    <span>Activity : <%= @event.activity.activity_name %> - <%= @event.nb_participant %> people needed, already </span> 
-                    <span> 
-                        <%= @event.event_participants.size %> participants
-                    </span>
-                    <div>
-                    <br>
+        <div class="container">
+            <div class="event-wrapper">
+                 <div class="event-period">
+                    <span><%= @event.date.strftime("%A %b %e %Y") %> </span>    
+                </div>
+                <div class="event-title-div">
+                    <h1 class="event-title"><%= @event.name.capitalize %></h1>
+                </div>
+                <div class="register-button button-events-div">
+                            <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
+                </div> 
+                <div class="event-container">
+                    
+                    <div class="event-info">
+
+                        <div class="event-detail">
+                            <div class="event-org">
+                                <span>Activity : <%= @event.activity.activity_name %> - <%= @event.nb_participant %> people needed, already </span> 
+                                <span> 
+                                    <%= @event.event_participants.size %> participants 
+                                </span>
+                                
+                            </div>
+                        </div>   
+                        <div class="event-date">
+                            <span><%= @event.date.strftime("%a") %> at <%= @event.time.strftime("%H:%M") %></span>
+                        </div>  
+                        <div class="event-location">
+                            <span><%= @event.location.place_name %></span>
+                            <span><%= @event.location.street1 %> <%= @event.location.street2 %>, <%= @event.location.zip %> <%= @event.location.city %></span>
+                        </div>  
+                    </div>      
+
+                    <div class="event-description">
+                        <div id="mapid"></div>
+                        <script type="text/javascript">
+                            var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
+                            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX'] %>', {
+                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                            maxZoom: 18,
+                            id: 'mapbox.streets',
+                        }).addTo(mymap);
+                        var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
+                        </script>
+                    </div>
+                    <div class='participant-box'>
                         Participants :
                         <% @event.event_participants.each do |participant| %>
                             <% if participant.user.id != current_user.id %>
-                                <div class=”item”>
+                                <div class="item">
                                     <%= participant.user.username %> <%= participant.user.profile_picture %><%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), method: 'post'%> 
                                 </div>
                             <% end %>
                         <% end %>
                     </div>
                 </div>
-            </div>  
-            <div class="register-button">
-                <%= link_to 'Count me in', event_participants_path(:event_id => @event.id), class: "btn btn-block btn-dark", method: :post %>
-            </div>  
-            <div class="event-date">
-                <span><%= @event.date.strftime("%a") %> at <%= @event.time.strftime("%H:%M") %></span>
-            </div>  
-            <div class="event-location">
-                <span><%= @event.location.place_name %></span>
-                <span><%= @event.location.street1 %> <%= @event.location.street2 %>, <%= @event.location.zip %> <%= @event.location.city %></span>
-            </div>  
-        </div>      
-
-        <div class="event-description">
-            <div id="mapid"></div>
-            <script type="text/javascript">
-                var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
-                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX'] %>', {
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
-                id: 'mapbox.streets',
-            }).addTo(mymap);
-            var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
-            </script>
+            </div>
+    
         </div>
+    </body>
 
-    </div>
-</div>
-
-<%= render 'shared/footer' %>
+</div> <!--End of wrapper -->
+<footer>
+    <%= render 'shared/footer' %>
+</footer>
