@@ -1,6 +1,9 @@
-      <%= render 'shared/navbar' %>
-
-
+<!-- Main wrapper -->
+<div class="wrapper">
+<!-- Navbar -->
+<%= render 'shared/navbar' %>
+  <!-- Body container -->
+  <body>
       <div id="container-body">
         <div class="form-container">
           <div class="title-container">
@@ -24,7 +27,7 @@
                 <div class="field two-inline">
                   <%= e.date_field :date %>
                   <%= e.time_field :time %>
-                </div>  
+                </div>
                 <div>
                   <%= e.text_field :level, placeholder: "Level of practice" %>
                 </div>
@@ -57,8 +60,10 @@
           </div>
         </div>
       </div>
-
+    </body>
 </div> <!--End of wrapper -->
 
 <!-- Footer -->
+<footer>
   <%= render 'shared/footer' %>
+</footer>
