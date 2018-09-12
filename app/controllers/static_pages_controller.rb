@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
+    @events = Event.first(6)
   end
 
   def about
@@ -7,6 +8,6 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
-  
+
 
 end
