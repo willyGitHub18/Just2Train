@@ -17,14 +17,16 @@
                 </div>
 
                 <div class="field two-inline">
-                  <%= e.text_field :nb_participant, placeholder: "N of participants"%><br />
-                  <%= e.text_field :price, placeholder: "Price" %><br />
+                  <%= e.text_field :nb_participant, placeholder: "N of participants"%>
+                  <%= e.text_field :price, placeholder: "Price" %>
                 </div>
 
                 <div class="field two-inline">
                   <%= e.date_field :date %>
-                  <%= e.time_field :time %><br />
-                  <%= e.text_field :level, placeholder: "Level of practice" %><br />
+                  <%= e.time_field :time %>
+                </div>  
+                <div>
+                  <%= e.text_field :level, placeholder: "Level of practice" %>
                 </div>
                 <% end %>
 
