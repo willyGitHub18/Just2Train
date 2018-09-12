@@ -11,7 +11,7 @@
 
         <div class="container">
             <div class="event-wrapper">
-                 <div class="event-period">
+                <div class="event-period">
                     <span><%= @event.date.strftime("%A %b %e %Y") %> </span>    
                 </div>
                 <div class="event-title-div">
@@ -25,44 +25,89 @@
                     <div class="event-info">
 
                         <div class="event-detail">
-                            <div class="event-org">
-                                <span>Activity : <%= @event.activity.activity_name %> - <%= @event.nb_participant %> people needed, already </span> 
-                                <span> 
-                                    <%= @event.event_participants.size %> participants 
-                                </span>
-                                
+                            <div class="event-activity">
+                                Activity :
+                            </div>
+                            <div class="event-bright-element">
+                                <%= @event.activity.activity_name %>
+                            </div>
+                            <div class="event-bright-element">
+                                <%= @event.nb_participant %>
+                            </div>
+                            <div class="event-participant-number-need">
+                                 people needed
+                            </div>
+                            <br>
+                            <div class="event-participant-number-got">
+                                Already 
+                                <div class="event-bright-element">
+                                <%= @event.event_participants.size %> 
+                                </div>
+                                participants   
                             </div>
                         </div>   
-                        <div class="event-date">
-                            <span><%= @event.date.strftime("%a") %> at <%= @event.time.strftime("%H:%M") %></span>
+                        
+                        <div class="event-date-div">
+                            <div class="event-date">
+                                <div class="event-day-calendar">
+                                    <%= @event.date.strftime("%a") %> 
+                                </div>
+                                <div class="event-at">
+                                    AT
+                                </div>
+                                <div> 
+                                    <%= @event.time.strftime("%H:%M") %>
+                                </div>
+                            </div>
                         </div>  
-                        <div class="event-location">
-                            <span><%= @event.location.place_name %></span>
-                            <span><%= @event.location.street1 %> <%= @event.location.street2 %>, <%= @event.location.zip %> <%= @event.location.city %></span>
-                        </div>  
+                        
                     </div>      
 
-                    <div class="event-description">
-                        <div id="mapid"></div>
-                        <script type="text/javascript">
-                            var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
-                            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX'] %>', {
-                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                            maxZoom: 18,
-                            id: 'mapbox.streets',
-                        }).addTo(mymap);
-                        var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
-                        </script>
+                    <div class="event-location-board-div">
+                        <div class="event-location-board">
+                        
+                            <div class="event-location">
+                                <div class="event-location-name">
+                                    <%= @event.location.place_name %></span>
+                                </div>
+                                <div class="event-location-adress">
+                                    <%= @event.location.street1 %> <%= @event.location.street2 %> 
+                                </div>
+                                <div class="event-location-zip">
+                                    <%= @event.location.zip %>, <%= @event.location.city %></span>
+                                </div>
+                            </div>  
+                            <div id="mapid">
+                            <script type="text/javascript">
+                                var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
+                                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX'] %>', {
+                                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                                maxZoom: 18,
+                                id: 'mapbox.streets',
+                            }).addTo(mymap);
+                            var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
+                            </script>
+                            </div>
+                        </div>
                     </div>
+                    <div class='participant-box-more'>
                     <div class='participant-box'>
-                        Participants :
+                        <div class="participant-disp">
+                            Participants :
+                        </div>
                         <% @event.event_participants.each do |participant| %>
                             <% if participant.user.id != current_user.id %>
-                                <div class="item">
-                                    <%= participant.user.username %> <%= participant.user.profile_picture %><%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), method: 'post'%> 
+                                <div class='participant-person'>
+                                    <div class="participant-name">
+                                        <%= participant.user.username %>
+                                    </div>
+                                    <div class="register-button">
+                                        <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), class: "btn btn-dark participant-msg", method: 'post'%> 
+                                    </div>
                                 </div>
                             <% end %>
                         <% end %>
+                    </div>
                     </div>
                 </div>
             </div>

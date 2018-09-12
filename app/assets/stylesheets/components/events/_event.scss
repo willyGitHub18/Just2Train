@@ -1,6 +1,7 @@
 .event-container {
   display: flex;
   align-items: inherit;
+  margin-bottom: 50px;
 }
 
 .image-event {
@@ -9,7 +10,7 @@
 }
 
 .event-period {
-  margin :15px;
+  margin-top :15px;
   text-align: right;
 }
 
@@ -37,6 +38,107 @@ margin: 15px;
 }  
 
 .button-events:hover {
-  background-color: #4d6aff;
+  background-color: #4fa8f6a8;
   box-shadow: #ddfdff 0px 0px 10px 3px ;
 }
+
+.event-info {
+  text-align: center;
+  padding: 20px;
+  min-width: 150px;
+  max-width: 300px;
+  background-color: #0d238f;
+  border-radius: 15px;
+  box-shadow: #dafdff 0px 0px 10px 1px ;
+  color: #fff;
+  height: 365px;
+}
+
+.event-bright-element {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.event-date-div {
+  padding: 20px  
+}
+
+
+.event-date {
+  background-color: #ebecee;
+  color: #2d3142;
+  padding: 10px;
+  border-radius: 10%;
+  box-shadow: #dafdff 0px 0px 5px 0px ;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.event-at {
+  font-size: 10px;
+}
+
+.event-day-calendar {
+  font-size: 18px;
+}
+
+.event-location-board-div {
+  width: 100%;
+}
+
+.event-location-board {
+background-color: #2d3142;
+text-align: center;
+margin: 0px 150px;
+color: #fff;
+padding:20px;
+min-width: 440px;
+border-radius: 15px;
+box-shadow: #dafdff 0px 0px 10px 1px ;
+}
+
+.event-location {
+  margin :20px;
+}
+
+.event-location-name {
+  font-weight: bold; 
+}
+
+#mapid {
+  text-align: center;
+  margin: 10px 35px;
+  border-radius: 10%;
+}
+
+.participant-box {
+  text-align: center;
+  padding: 20px;
+  min-width: 150px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: #dafdff 0px 0px 10px 1px ;
+  color: #0d238f;
+  height: 365px;
+}
+
+.participant-person{
+  margin: 15px;
+}
+
+.participant-name {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.participant-msg {
+  background-color: #4fa8f6;
+  padding: 5px;
+  border: none;
+}
+.participant-msg:hover {
+  background-color: #0d238f;
+  box-shadow: #ddfdff 0px 0px 10px 3px ;
+}
+
