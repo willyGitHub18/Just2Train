@@ -1,9 +1,5 @@
 class EventParticipantsController < ApplicationController
   
-  def show
-    byebug
-    @event_participants = EventParticipant.all
-  end
   def create
     chosen_event = Event.find(params[:event_id])
 
@@ -16,7 +12,7 @@ class EventParticipantsController < ApplicationController
       flash[:notice] = "Thank you your are now registered. We are counting on your presence ;)"
       redirect_to events_path
     else
-      flash.now[:warning] = "The seem to be problems when submitting your registration, please try again"
+      flash.now[:warning] = "A problem occured while you submit your registration, please try again"
       render event_path
     end
   end
@@ -26,3 +22,5 @@ class EventParticipantsController < ApplicationController
     params.require(:event_participant).permit(:is_creator, :is_admin, :event_id, :user_id)
   end
 end
+
+
