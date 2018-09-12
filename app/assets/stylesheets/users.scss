@@ -7,7 +7,6 @@
 .profile {
   margin: 20px 0px;
 
-
 }
 
 /* Profile sidebar */
@@ -141,10 +140,25 @@
 
 .img-cards {
   height: 200px;
-  width: 240px;
+  width: 220px;
 }
 
 .col-md-9 {
-  border: solid 1px;
-  background: red;
+
+  background: none;
+}
+
+.col-md-4{
+  background-color: white;
+  height: 450px;
+  padding-top: 20px;
+  max-width: 250px !important;
+  margin: 0 10px;
+  -moz-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  -webkit-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  box-shadow: 2px 2px 5px 0px #9b9b9b;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=134, Strength=5);
+
+
 }
