@@ -8,8 +8,9 @@
 
         <div class="event-info">
             <div class="event-period">
-                <span><%= @event.time.strftime("%b") %> </span>
-                <span><%= @event.time.strftime("%d") %></span>
+               
+                <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
+                
             </div>
             <div class="event-detail">
                 <h1><%= @event.name %></h1>
@@ -35,7 +36,7 @@
                 <%= link_to 'Count me in', event_participants_path(:event_id => @event.id), class: "btn btn-block btn-dark", method: :post %>
             </div>
             <div class="event-date">
-                <span><%= @event.date.strftime("%A") %> at <%= @event.time.strftime("%H:%M") %></span>
+                <span><%= @event.date.strftime("%a") %> at <%= @event.time.strftime("%H:%M") %></span>
             </div>
             <div class="event-location">
                 <span><%= @event.location.place_name %></span>
@@ -46,12 +47,13 @@
         <div class="event-description">
             <div id="mapid"></div>
             <script type="text/javascript">
-                var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+                var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
                 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=<%= ENV['MAPBOX'] %>', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
                 id: 'mapbox.streets',
             }).addTo(mymap);
+            var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
             </script>
         </div>
 

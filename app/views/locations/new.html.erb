@@ -39,6 +39,8 @@
                   <%= l.text_field :city, placeholder: "City", id: :locality %>
                   <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
                   </div>
+                  <%= l.text_field :latitude, placeholder: "Latitude", id: :latitude, type: "hidden" %>
+                  <%= l.text_field :longitude, placeholder: "Longitude", id: :longitude, type: "hidden" %>
                   <div class= "actions">
                   <%= l.submit "Create", :class=> "btn-primary" %>
                   </div>
