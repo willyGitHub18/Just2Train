@@ -7,6 +7,8 @@
         </div>
 
         <div class="event-info">
+            
+           
             <div class="event-period">
                
                 <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
@@ -15,34 +17,34 @@
             <div class="event-detail">
                 <h1><%= @event.name %></h1>
                 <div class="event-org">
-                    <span><%= @event.activity.activity_name %> - <%= @event.nb_participant %> people </span> 
+                    <span>Activity : <%= @event.activity.activity_name %> - <%= @event.nb_participant %> people needed, already </span> 
                     <span> 
-                        Participants : <% @event.event_participants.each do |participant| %>
-                        <%= participant.user.username %>
-                        <% end %>
+                        <%= @event.event_participants.size %> participants
                     </span>
                     <div>
+                    <br>
+                        Participants :
                         <% @event.event_participants.each do |participant| %>
-                            <% if participant.id != current_user.id %>
+                            <% if participant.user.id != current_user.id %>
                                 <div class=”item”>
-                                    <%= link_to 'Contact ', conversations_path(sender_id: current_user.id, recipient_id: participant.id), method: 'post'%> <%= participant.user.username %> <%= participant.user.profile_picture %> 
+                                    <%= participant.user.username %> <%= participant.user.profile_picture %><%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), method: 'post'%> 
                                 </div>
                             <% end %>
                         <% end %>
                     </div>
                 </div>
-            </div>
+            </div>  
             <div class="register-button">
                 <%= link_to 'Count me in', event_participants_path(:event_id => @event.id), class: "btn btn-block btn-dark", method: :post %>
-            </div>
+            </div>  
             <div class="event-date">
                 <span><%= @event.date.strftime("%a") %> at <%= @event.time.strftime("%H:%M") %></span>
-            </div>
+            </div>  
             <div class="event-location">
                 <span><%= @event.location.place_name %></span>
                 <span><%= @event.location.street1 %> <%= @event.location.street2 %>, <%= @event.location.zip %> <%= @event.location.city %></span>
-            </div>
-        </div>
+            </div>  
+        </div>      
 
         <div class="event-description">
             <div id="mapid"></div>
