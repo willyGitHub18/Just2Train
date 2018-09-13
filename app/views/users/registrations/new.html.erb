@@ -1,0 +1,81 @@
+<!-- Main wrapper -->
+<div class="wrapper">
+
+<!-- Navbar ------------------------->
+  <%= render 'shared/navbar' %>
+    <body>  <!-- Body container -->
+
+          <!-- Container for the form -->
+          <div class="form-container">
+            <div class="title-container">
+              <h2>Sign up</h2>
+              <div>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+                <p>Personal information</p>
+
+                <div class="container-name">
+                  <div class="field">
+                    <%= f.text_field :full_name, placeholder: "Full Name", autofocus: true, autocomplete: "first_name" %>
+                  </div>
+
+                  <div class="field">
+                    <%= f.text_field :username, placeholder: "Username (Required)", autocomplete: "last_name" %>
+                  </div>
+                </div>
+
+                <div class="area">
+                  <%= f.text_area :biography, placeholder: "Biography", autocomplete: "description" %>
+                </div>
+
+                <div class="field">
+                  <%= f.text_field :phone, placeholder:"Phone number (Required)", autocomplete: "phone" %>
+                </div>
+
+                <div class="field">
+                  <%= f.email_field :email, placeholder:"Email (Required)", autocomplete: "email" %>
+                </div>
+
+                <div class="field">
+                    <%= f.password_field :password, placeholder:'Password (6 characters minimum)', autocomplete: "new-password" %>
+                </div>
+
+                <div class="field">
+                  <%= f.password_field :password_confirmation, placeholder:"Password confirmation", autocomplete: "new-password" %>
+                </div>
+
+              <div class="container-adress">
+                <p>Adress information</p>
+
+                <div class="field">
+                  <%= f.text_field :street1, placeholder:"Steet 1", autocomplete: "street1" %>
+                </div>
+
+                <div class="field">
+                  <%= f.text_field :street2, placeholder: "Street 2", autocomplete: "street2" %>
+                </div>
+
+
+                <div class="field two-inline">
+                  <%= f.text_field :city, placeholder: "City", autocomplete: "city" %>
+                  <%= f.text_field :zip, placeholder:"Zip", autocomplete: "zip" %>
+                </div>
+
+
+
+          <div class="actions">
+            <%= f.submit "Sign up", :class=> "btn-primary" %>
+          </div>
+
+          <% end %><!-- End of form_for -->
+        <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+
+
+</div> <!--End of wrapper -->
+  <%= render 'shared/footer' %>
