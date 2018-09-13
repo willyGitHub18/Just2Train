@@ -21,7 +21,7 @@ margin: 15px;
 
 .event-title {
   font-size: 40px;
-} 
+}
 
 .button-events {
   width: 130px;
@@ -35,7 +35,7 @@ margin: 15px;
 }
 .button-events-div {
   text-align: center;
-}  
+}
 
 .button-events:hover {
   background-color: #4fa8f6a8;
@@ -60,7 +60,7 @@ margin: 15px;
 }
 
 .event-date-div {
-  padding: 20px  
+  padding: 20px
 }
 
 
@@ -102,7 +102,7 @@ box-shadow: #dafdff 0px 0px 10px 1px ;
 }
 
 .event-location-name {
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 #mapid {
@@ -142,3 +142,17 @@ box-shadow: #dafdff 0px 0px 10px 1px ;
   box-shadow: #ddfdff 0px 0px 10px 3px ;
 }
 
+.col-md-3{
+  background-color: white;
+  height: 400px;
+  padding-top: 20px;
+
+
+  -moz-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  -webkit-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  box-shadow: 2px 2px 5px 0px #9b9b9b;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=134, Strength=5);
+
+
+}
