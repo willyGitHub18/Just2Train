@@ -10,16 +10,20 @@ module ApplicationHelper
   end
 
   def is_creator?
-    unless @current_user.is_creator == true
+    @event = Event.find_by(location_id: Location.find(params[:id]))
+    @event_participant = EventParticipant.find_by(event_id: @event.id, user_id: current_user.id)
+    if @event_participant.is_creator != true
       flash[:danger] = "Nice try but you're not the creator of the event"
-      redirect_to event_path(:id)
+      redirect_to events_path
     end
   end
 
   def is_administrator?
-    unless @current_user.is_admin == true
+    @event = Event.find_by(location_id: Location.find(params[:id]))
+    @event_participant = EventParticipant.find_by(event_id: @event.id, user_id: current_user.id)
+    if @event_participant.is_admin != true
       flash[:danger] = "You cannot pass! Ask Gandalf"
-      redirect_to event_path(:id)
+      redirect_to events_path
     end
   end
 end
