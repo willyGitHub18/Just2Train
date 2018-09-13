@@ -1,5 +1,9 @@
 class LocationsController < ApplicationController
+    include ApplicationHelper
+
     before_action :authenticate_user!
+    before_action :is_creator? , only: [:edit, :update, :destroy]
+    before_action :is_administrator? , only: [:edit, :update]
 
     def new
       @location = Location.new
@@ -10,6 +14,7 @@ class LocationsController < ApplicationController
     def create
       @location = Location.new(location_params)
       @location.save
+      create_participant
       flash[:success] = "Congrats, your event has been created"
       redirect_to events_path
     end

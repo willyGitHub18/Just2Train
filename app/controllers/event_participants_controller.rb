@@ -1,14 +1,15 @@
 class EventParticipantsController < ApplicationController
-  
+
   def create
     chosen_event = Event.find(params[:event_id])
 
     @event_participant = EventParticipant.new
     @event_participant.user = current_user
     @event_participant.event = chosen_event
-    
+    @event_participant.is_creator = false
+    @event_participant.is_admin = false
+
     if @event_participant.save
-    
       flash[:notice] = "Thank you your are now registered. We are counting on your presence ;)"
       redirect_to events_path
     else
@@ -22,5 +23,3 @@ class EventParticipantsController < ApplicationController
     params.require(:event_participant).permit(:is_creator, :is_admin, :event_id, :user_id)
   end
 end
-
-
