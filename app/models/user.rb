@@ -12,5 +12,9 @@ class User < ApplicationRecord
   validates :username, length: { in: 3..20 }
   validates :phone, presence: true, format: { with: /\A(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[- ]?\d{3}[- ]?\d{4}\z/, message: "phone number format not recognized" }
   validates :biography, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }
+
+  def to_param
+    username 
+  end
 end
 

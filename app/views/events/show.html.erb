@@ -2,7 +2,7 @@
 <div class="wrapper">
     <!-- Navbar ------------------------->
     <%= render 'shared/navbar' %>
-    
+
     <body>  <!-- Body container -->
 
         <div class="event-image">
@@ -12,16 +12,19 @@
         <div class="container">
             <div class="event-wrapper">
                 <div class="event-period">
-                    <span><%= @event.date.strftime("%A %b %e %Y") %> </span>    
+                    <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
                 </div>
                 <div class="event-title-div">
                     <h1 class="event-title"><%= @event.name.capitalize %></h1>
                 </div>
                 <div class="register-button button-events-div">
-                            <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
-                </div> 
+                    <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
+                </div>
+                    <div class="edit-link">
+                        <%= link_to 'Modify event', edit_location_path(@event.location), class: "btn btn-primary" %>
+                    </div>
                 <div class="event-container">
-                    
+
                     <div class="event-info">
 
                         <div class="event-detail">
@@ -39,44 +42,44 @@
                             </div>
                             <br>
                             <div class="event-participant-number-got">
-                                Already 
+                                Already
                                 <div class="event-bright-element">
-                                <%= @event.event_participants.size %> 
+                                <%= @event.event_participants.size %>
                                 </div>
-                                participants   
+                                participants
                             </div>
-                        </div>   
-                        
+                        </div>
+
                         <div class="event-date-div">
                             <div class="event-date">
                                 <div class="event-day-calendar">
-                                    <%= @event.date.strftime("%a") %> 
+                                    <%= @event.date.strftime("%a") %>
                                 </div>
                                 <div class="event-at">
                                     AT
                                 </div>
-                                <div> 
+                                <div>
                                     <%= @event.time.strftime("%H:%M") %>
                                 </div>
                             </div>
-                        </div>  
-                        
-                    </div>      
+                        </div>
+
+                    </div>
 
                     <div class="event-location-board-div">
                         <div class="event-location-board">
-                        
+
                             <div class="event-location">
                                 <div class="event-location-name">
                                     <%= @event.location.place_name %></span>
                                 </div>
                                 <div class="event-location-adress">
-                                    <%= @event.location.street1 %> <%= @event.location.street2 %> 
+                                    <%= @event.location.street1 %> <%= @event.location.street2 %>
                                 </div>
                                 <div class="event-location-zip">
                                     <%= @event.location.zip %>, <%= @event.location.city %></span>
                                 </div>
-                            </div>  
+                            </div>
                             <div id="mapid">
                             <script type="text/javascript">
                                 var mymap = L.map('mapid').setView(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>'], 13);
@@ -102,7 +105,7 @@
                                         <%= participant.user.username %>
                                     </div>
                                     <div class="register-button">
-                                        <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), class: "btn btn-dark participant-msg", method: 'post'%> 
+                                        <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), class: "btn btn-dark participant-msg", method: 'post'%>
                                     </div>
                                 </div>
                             <% end %>
@@ -111,7 +114,7 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
     </body>
 
