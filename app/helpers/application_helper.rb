@@ -14,7 +14,7 @@ module ApplicationHelper
     @event_participant = EventParticipant.find_by(event_id: @event.id, user_id: current_user.id)
     if @event_participant.is_creator != true
       flash[:danger] = "Nice try but you're not the creator of the event"
-      redirect_to events_path
+      redirect_to event_path(@event)
     end
   end
 
@@ -23,7 +23,7 @@ module ApplicationHelper
     @event_participant = EventParticipant.find_by(event_id: @event.id, user_id: current_user.id)
     if @event_participant.is_admin != true
       flash[:danger] = "You cannot pass! Ask Gandalf"
-      redirect_to events_path
+      redirect_to event_path(@event)
     end
   end
 end
