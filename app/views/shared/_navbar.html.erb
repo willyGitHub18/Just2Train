@@ -1,5 +1,5 @@
 <nav id ="navbar" class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#"><%= image_tag 'j2t-logo-white.png' %></a>
+  <%= link_to image_tag('j2t-logo-white.png'), root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">JUST2TRAIN</a>
+        <%= link_to "JUST2TRAIN", root_path, class: "nav-link" %>
       </li>
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
