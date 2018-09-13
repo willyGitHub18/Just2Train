@@ -38,7 +38,14 @@
             <%= l.text_field :city, placeholder: "City", id: :locality %>
             <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
             </div>
-            <%= l.submit "Save changes" %> <%= link_to "Delete", @location, method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= l.text_field :latitude, placeholder: "Latitude", id: :latitude, type: "hidden" %>
+            <%= l.text_field :longitude, placeholder: "Longitude", id: :longitude, type: "hidden" %>
+            <div class= "actions">
+            <%= l.submit "Save changes" %>
+            <% if !is_creator? %>
+              <%= link_to "Delete", @location, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
+            </div>
           <% end %>
           </div>
 
