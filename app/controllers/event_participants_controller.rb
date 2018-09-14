@@ -1,8 +1,10 @@
+require 'mailjet'
+require 'mail'
+
 class EventParticipantsController < ApplicationController
 
   def create
     chosen_event = Event.find(params[:event_id])
-
     # Counting the number of participants already registered to a particular event
     registered = EventParticipant.where(event_id: chosen_event.id).count
 
@@ -17,6 +19,7 @@ class EventParticipantsController < ApplicationController
       @event_participant.is_admin = false
 
       if @event_participant.save
+        UserMailer.event_participant_email(current_user.email).deliver
         flash[:notice] = "Thank you your are now registered. We are counting on your presence ;)"
         redirect_to events_path
       else

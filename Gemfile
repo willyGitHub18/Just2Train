@@ -84,3 +84,8 @@ gem 'bootstrap', '~> 4.1.3'
 
 # Bootstrap JavaScript depends on jQuery
 gem 'jquery-rails'
+
+# Mailer
+gem 'mailjet'
+
+gem 'mail'
