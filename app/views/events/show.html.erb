@@ -99,20 +99,20 @@
 
                     <div class="col-md-3">
                         <% if is_participant? != true %>
-                        <div class="register-button button-events-div">
-                            <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
-                        </div>
+                            <div class="register-button button-events-div">
+                                <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
+                            </div>
                         <% end %>
-                        <% if @event_participant != current_user.id %>
-                        <div class="register-button button-events-div">
-                            <%= link_to 'Cancel Participation', root_path, class: "btn btn-dark button-participation-cancel" %>
-                        </div>
+                        <% if is_participant? == true %>
+                            <div class="register-button button-events-div">
+                                <%= link_to 'Cancel Participation', root_path, class: "btn btn-dark button-participation-cancel" %>
+                            </div>
                         <% end %>
-                        <div class='participant-box'>
-                            <h4 class="participant-disp">
-                                Participants :
-                            </h4>
-                            <% if @event_participant != current_user.id %>
+                            <div class='participant-box'>
+                                <h4 class="participant-disp">
+                                    Participants :
+                                </h4>
+                            <% if is_participant? == true %>
                                 <div class="event-i-do-div">
                                     <h4 class="event-i-do-it">ME</h4>
                                 </div>
