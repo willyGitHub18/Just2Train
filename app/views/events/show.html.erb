@@ -89,13 +89,10 @@
                             var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
                             </script>
                             </div>
-                            <div id=speacial-fav class="sport-fav">
+                            <div class="button-space-up">
                               <!-- Buttons under map -->
                               <div class="register-button button-events-div">
                                 <%= link_to edit_location_path(@event.location), class: "btn btn-success" do %><i class="fas fa-edit"> Modify Event</i><%end%>
-                                  <% if @event_participant != current_user.id %>
-                                    <%= link_to root_path, class: "btn btn-danger" do %><i class="fas fa-times"> Cancel Participation</i><%end%>
-                                  <% end %>
                               </div>
                             </div>
                     </div>
@@ -119,7 +116,7 @@
                                 </h4>
                             <% if is_participant? == true %>
                                 <div class="event-i-do-div">
-                                    <p>ME</p>
+                                    <p class="event-i-do-it">ME</p>
                                 </div>
                             <% end %>
                             <% @event.event_participants.each do |participant| %>

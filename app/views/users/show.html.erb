@@ -26,31 +26,23 @@
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-sm" %>
-					<button type="button" class="btn btn-danger btn-sm">Message</button>
+					<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-sm button-prof-edit" %>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-
-						</li>
-						<li>
-              <p class="label-about">About you:</p>
+					<% if current_user.biography != nil %>
+              <p class="label-about">About you :</p>
               <p class="label-about-desc"><%= current_user.biography%></p>
-						</li>
-						<li>
-              <p class="label-about">Address:</p>
+					<% end %>
+					<% if current_user.street1 != nil || current_user.street2 != nil || current_user.zip != nil || current_user.city != nil %>
+              <p class="label-about">Address :</p>
               <p class="label-about-desc"><%= current_user.street1%>
               <%= current_user.street2%><br>
               <%= current_user.zip%>
               <%= current_user.city%></p>
-						</li>
-						<li>
-
-						</li>
-					</ul>
+					<% end %>
+			
 				</div>
 				<!-- END MENU -->
 			</div>

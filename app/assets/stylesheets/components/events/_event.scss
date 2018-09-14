@@ -44,25 +44,10 @@ margin-bottom: 15px;
 }
 
 .button-events:hover {
-  background-color: #6a56d3;
+  background-color: #0069d9;
   box-shadow: #ddfdff 0px 0px 10px 3px ;
 }
 
-.button-events-edit {
-  width: 115px;
-  padding: 5px;
-  margin-top: 15px;
-  font-weight: bold;
-  border-radius: 5px;
-  background-color: #e96c23d2;
-  border: none;
-  box-shadow: #dafdff 0px 0px 10px 1px ;
-}
-
-.button-events-edit:hover {
-  background-color: #ffc342a8;
-  box-shadow: #ddfdff 0px 0px 10px 3px ;
-}
 
 .button-participation-cancel {
   width: 180px;
@@ -70,14 +55,18 @@ margin-bottom: 15px;
   margin-top: 15px;
   font-weight: bold;
   border-radius: 5px;
-  background-color: #e96c23d2;
+  background-color: #e4380dea;
   border: none;
-  box-shadow: #dafdff 0px 0px 10px 1px ;
+  box-shadow: #dafdff 0px 0px 3px 1px ;
 }
 
 .button-participation-cancel:hover {
-  background-color: #ffc342a8;
-  box-shadow: #ddfdff 0px 0px 10px 3px ;
+  background-color: #ffbf36b8;
+  box-shadow: #ddfdff 0px 0px 5px 2px ;
+}
+
+.button-space-up {
+  padding-top: 15px
 }
 
 .event-detail {
@@ -178,12 +167,10 @@ margin: 5px 80px
 
 
 .event-i-do-it{
-  background-color: #6a56d3;
-  color: #fff;
-  border-radius: 50%;
   font-size: 15px;
   letter-spacing: 2px;
-  padding: 10px;
+  font-weight: bold;
+  padding: 10px 0 5px 0;
 }
 
 .participant-name {
@@ -191,15 +178,7 @@ margin: 5px 80px
   font-weight: bold;
 }
 
-.participant-msg {
-  background-color: #6a56d3;
-  padding: 5px;
-  border: none;
-}
-.participant-msg:hover {
-  background-color: #3b2c85;
-  box-shadow: #ddfdff 0px 0px 10px 3px ;
-}
+
 
 .col-md-3{
   background-color: white;

@@ -133,15 +133,17 @@
 }
 
 .label-about{
+  text-align: center;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 20px;
   padding-bottom: 0px;
   margin-bottom: 0px;
   color: #EBECEE;
 }
 
 .label-about-desc {
+  text-align: center;
       font-family: 'Fira Sans Condensed', sans-serif;
     color: #EBECEE;
 }
@@ -221,5 +223,14 @@
 
 .stop-this-style:hover {
   text-decoration: none;
-  color: #6a56d3;
+  color: #0069d9;
+}
+
+.button-prof-edit {
+  background-color: #0069d9;
+  border: #0069d9
+}
+
+.button-prof-edit:hover {
+  background-color: #5b9bd1;
 }
