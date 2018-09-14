@@ -19,4 +19,6 @@
 //= require popper
 //= require bootstrap-sprockets
 
-$('.dropdown-toggle').dropdown()
+$(document).ready(function(){
+  $('.dropdown-toggle').dropdown();
+});
