@@ -41,3 +41,36 @@ img {
         max-width: 100%;
     }
 }
+
+.preview-image-left, .preview-image-right {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ebecee;
+  }
+
+  .preview-image-left:hover .overlay, .preview-image-right:hover .overlay {
+    opacity: 0.8;
+  }
+
+  .text-cards {
+    color: #2d31427e;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
