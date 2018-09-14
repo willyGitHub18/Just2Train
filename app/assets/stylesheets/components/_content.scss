@@ -2,6 +2,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  background: gray;
 
   .events-grid-scroll {
     display: inline-block;
@@ -9,7 +10,18 @@
 }
 
 .events-element-scroll {
-  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+
+  background-color: white;
+  height: 400px;
+  padding: 0 10px;
+  max-width: 250px !important;
+  margin: 0 10px 10px;
+
+  // -moz-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  // -webkit-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  // -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
+  // box-shadow: 2px 2px 5px 0px #9b9b9b;
+  // filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=134, Strength=5);
 }
 
 .picture-activity-scroll {
@@ -21,7 +33,7 @@
 }
 
 .events-content-scroll {
-  background-color: #f2f2f2;
+
 }
 
 .events-period-scroll {
