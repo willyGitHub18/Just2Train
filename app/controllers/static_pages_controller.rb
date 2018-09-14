@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
-    @events = Event.first(6)
+    @events = Event.last(6).reverse
   end
 
   def about
