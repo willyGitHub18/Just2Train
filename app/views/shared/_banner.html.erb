@@ -4,8 +4,17 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Just2Train&nbsp;</h1>
-    <p class="lead">Connecting people, sporting together.</p>
-    <%= link_to "Join Us", new_user_registration_path, class: "btn btn-primary" %>
-    <a class="btn btn-primary" href="#section5" role="button">About</a>
+    <h5>Connecting people, sporting together.</h5>
+    <%= link_to new_location_path, class: "btn btn-primary btn-lg extra" do %><i class="fas fa-map-marker"> Create an event </i><%end%>
+
+    <div class="sport-fav-div">
+    <h5> or find the events that already exists</h5>
+    <div id=speacial-fav class="sport-fav">
+      <%= link_to basketball_path, class: "btn btn-info btn-lg" do %><i class="fas fa-basketball-ball"> Basketball </i><%end%>
+      <%= link_to cyclism_path, class: "btn btn-info btn-lg" do %><i class="fas fa-bicycle"> Cyclism </i><%end%>
+      <%= link_to running_path, class: "btn btn-info btn-lg" do %><i class="fas fa-shoe-prints"> Running </i><%end%>
+      <%= link_to events_path, class: "btn btn-info btn-lg" do %><i class="fas fa-angle-double-right"> All events </i><%end%>
+    </div>
+
   </div>
 </div>
