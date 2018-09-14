@@ -38,4 +38,9 @@ module ApplicationHelper
       redirect_to event_path(@event)
     end
   end
+
+  def is_participant?
+    @event = Event.find_by(location_id: Location.find(params[:id]))
+    @event_participant = EventParticipant.exists?(event_id: @event.id, user_id: current_user.id)
+  end
 end

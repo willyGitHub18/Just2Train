@@ -21,11 +21,11 @@
                     <h2 class="event-title"><%= @event.name.capitalize %></h2>
                 </div>
 
-               
+
                 <div class="row">
 
                     <div class="col-md-3">
-                      
+
                         <h4 class="event-detail">
                             <div class="event-activity">
                                 Activity :
@@ -98,7 +98,7 @@
 
 
                     <div class="col-md-3">
-                        <% if @event_participant == current_user.id %>
+                        <% if is_participant? != true %>
                         <div class="register-button button-events-div">
                             <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
                         </div>
@@ -107,7 +107,7 @@
                         <div class="register-button button-events-div">
                             <%= link_to 'Cancel Participation', root_path, class: "btn btn-dark button-participation-cancel" %>
                         </div>
-                        <% end %>               
+                        <% end %>
                         <div class='participant-box'>
                             <h4 class="participant-disp">
                                 Participants :
