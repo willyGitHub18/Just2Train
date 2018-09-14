@@ -21,14 +21,12 @@
                     <h2 class="event-title"><%= @event.name.capitalize %></h2>
                 </div>
 
-                <div class="register-button button-events-div">
-                    <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
-                </div>
+               
                 <div class="row">
 
                     <div class="col-md-3">
-
-                        <div class="event-detail">
+                      
+                        <h4 class="event-detail">
                             <div class="event-activity">
                                 Activity :
                             </div>
@@ -49,7 +47,7 @@
                                 </div>
                                 participants
                             </div>
-                        </div>
+                        </h4>
 
                         <div class="event-date-div">
                             <div class="event-date">
@@ -100,27 +98,39 @@
 
 
                     <div class="col-md-3">
-                    <div class='participant-box'>
-                        <div class="participant-disp">
-                            Participants :
+                        <% if @event_participant == current_user.id %>
+                        <div class="register-button button-events-div">
+                            <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
                         </div>
-                        <% @event.event_participants.each do |participant| %>
-                            <% if participant.user.id != current_user.id %>
-                                <div class='participant-person'>
-                                    <div class="participant-name">
-                                        <%= participant.user.username %>
-                                    </div>
-                                    <div class="register-button">
-                                        <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), class: "btn btn-dark participant-msg", method: 'post'%>
-                                    </div>
+                        <% end %>
+                        <% if @event_participant != current_user.id %>
+                        <div class="register-button button-events-div">
+                            <%= link_to 'Cancel Participation', root_path, class: "btn btn-dark button-participation-cancel" %>
+                        </div>
+                        <% end %>               
+                        <div class='participant-box'>
+                            <h4 class="participant-disp">
+                                Participants :
+                            </h4>
+                            <% if @event_participant != current_user.id %>
+                                <div class="event-i-do-div">
+                                    <h4 class="event-i-do-it">ME</h4>
                                 </div>
                             <% end %>
-                        <% end %>
+                            <% @event.event_participants.each do |participant| %>
+                                <% if participant.user.id != current_user.id %>
+                                    <div class='participant-person'>
+                                        <div class="participant-name">
+                                            <%= participant.user.username %>
+                                        </div>
+                                        <div class="register-button">
+                                            <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), class: "btn btn-dark participant-msg", method: 'post'%>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        </div>
                     </div>
-                     <div class="register-button button-events-div">
-                                <%= link_to 'Cancel Participation', root_path, class: "btn btn-dark button-participation-cancel" %>
-                            </div>
-                    
                 </div>
             </div>
 
