@@ -17,9 +17,6 @@
                 <div class="event-period">
                     <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
                 </div>
-                <div class="event-title-div">
-                    <h2 class="event-title"><%= @event.name.capitalize %></h2>
-                </div>
 
 
                 <div class="row">
@@ -67,8 +64,10 @@
 
                     <div class="col-md-6">
 
-
                             <div class="event-location">
+                              <div class="event-title-div">
+                                  <h3><%= @event.name.capitalize %></h3>
+                              </div>
                                 <div class="event-location-name">
                                     <%= @event.location.place_name %></span>
                                 </div>
@@ -90,11 +89,17 @@
                             var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
                             </script>
                             </div>
-                            <div class="register-button button-events-div">
-                                <%= link_to 'Modify Event', edit_location_path(@event.location), class: "btn btn-dark button-events-edit" %>
+                            <div id=speacial-fav class="sport-fav">
+                              <!-- Buttons under map -->
+                              <div class="register-button button-events-div">
+                                <%= link_to edit_location_path(@event.location), class: "btn btn-success" do %><i class="fas fa-edit"> Modify Event</i><%end%>
+                                  <% if @event_participant != current_user.id %>
+                                    <%= link_to root_path, class: "btn btn-danger" do %><i class="fas fa-times"> Cancel Participation</i><%end%>
+                                  <% end %>
+                              </div>
                             </div>
-
                     </div>
+
 
 
                     <div class="col-md-3">
@@ -114,7 +119,7 @@
                                 </h4>
                             <% if is_participant? == true %>
                                 <div class="event-i-do-div">
-                                    <h4 class="event-i-do-it">ME</h4>
+                                    <p>ME</p>
                                 </div>
                             <% end %>
                             <% @event.event_participants.each do |participant| %>
@@ -123,8 +128,8 @@
                                         <div class="participant-name">
                                             <%= participant.user.username %>
                                         </div>
-                                        <div class="register-button">
-                                            <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: participant.id), class: "btn btn-dark participant-msg", method: 'post'%>
+                                        <div >
+                                            <span class= "btn btn-info"><i class="fas fa-comment"> Message</i></span>
                                         </div>
                                     </div>
                                 <% end %>
