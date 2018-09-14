@@ -12,19 +12,27 @@
 .event-period {
   margin-top :15px;
   text-align: right;
+  font-size: 12px;
 }
 
 .event-title-div {
 text-align: center;
-margin: 15px;
+margin-bottom: 15px;
 }
 
 .event-title {
-  font-size: 40px;
+  font-size: 55px;
+  letter-spacing: 3px;
+  color: #2d3142;
+}
+
+.button-events-div {
+  text-align: center;
 }
 
 .button-events {
   width: 130px;
+  letter-spacing: 1px;
   padding: 10px;
   margin: 15px;
   font-weight: bold;
@@ -33,38 +41,67 @@ margin: 15px;
   border: none;
   box-shadow: #dafdff 0px 0px 10px 1px ;
 }
-.button-events-div {
-  text-align: center;
-}
 
 .button-events:hover {
   background-color: #4fa8f6a8;
   box-shadow: #ddfdff 0px 0px 10px 3px ;
 }
 
-.event-info {
+.button-events-edit {
+  width: 115px;
+  padding: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #e96c23d2;
+  border: none;
+  box-shadow: #dafdff 0px 0px 10px 1px ;
+}
+
+.button-events-edit:hover {
+  background-color: #ffc342a8;
+  box-shadow: #ddfdff 0px 0px 10px 3px ;
+}
+
+.button-participation-cancel {
+  width: 180px;
+  padding: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #e96c23d2;
+  border: none;
+  box-shadow: #dafdff 0px 0px 10px 1px ;
+}
+
+.button-participation-cancel:hover {
+  background-color: #ffc342a8;
+  box-shadow: #ddfdff 0px 0px 10px 3px ;
+}
+
+.event-detail {
   text-align: center;
   padding: 20px;
   min-width: 150px;
   max-width: 300px;
-  background-color: #0d238f;
   border-radius: 15px;
   box-shadow: #dafdff 0px 0px 10px 1px ;
-  color: #fff;
-  height: 365px;
+  color: #2d3142;
 }
 
 .event-bright-element {
   font-size: 25px;
   font-weight: bold;
+  color: #0d238fc2;
 }
 
 .event-date-div {
-  padding: 20px
+  padding: 50px 80px;
 }
 
 
 .event-date {
+  text-align: center;
   background-color: #ebecee;
   color: #2d3142;
   padding: 10px;
@@ -99,6 +136,8 @@ box-shadow: #dafdff 0px 0px 10px 1px ;
 
 .event-location {
   margin :20px;
+  text-align: center;
+  
 }
 
 .event-location-name {
@@ -107,6 +146,7 @@ box-shadow: #dafdff 0px 0px 10px 1px ;
 
 #mapid {
   text-align: center;
+  
 
 }
 
@@ -119,7 +159,8 @@ box-shadow: #dafdff 0px 0px 10px 1px ;
   border-radius: 15px;
   box-shadow: #dafdff 0px 0px 10px 1px ;
   color: #0d238f;
-  height: 365px;
+  height: 400px;
+  overflow: auto;
 }
 
 .participant-person{
