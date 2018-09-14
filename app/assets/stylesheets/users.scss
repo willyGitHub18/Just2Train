@@ -184,6 +184,42 @@
   -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
   box-shadow: 2px 2px 5px 0px #9b9b9b;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=134, Strength=5);
+}
 
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .2s ease;
+  background-color: #ebecee;
+}
 
+.preview-image-left:hover .overlay, .preview-image-right:hover .overlay {
+  opacity: 0.9;
+}
+
+.text-cards-profil {
+  color: #2d31427e;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.stop-this-style {
+  color: #3b2c85
+}
+
+.stop-this-style:hover {
+  text-decoration: none;
+  color: #6a56d3;
 }

@@ -60,21 +60,22 @@
       <div class="row">
         <!-- Cards -------------------------------->
       <% @user.event_participants.each do |participant| %>
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-6 col-md-4 preview-image-left">
+						<div class="overlay">
+                <h3 class="text-cards-profil"><%= link_to 'Read More', "/event/"+participant.event.id.to_s, class: "stop-this-style" %></h3>
+            </div>	
+						<div class="thumbnail">
+							<%= image_tag("sporting.jpg", :class => "img-cards", :alt => "") %>
+							<div class="caption">
+								<h4><%= participant.event.name.capitalize %></h4>
 
-          <div class="thumbnail">
-            <%= image_tag("sporting.jpg", :class => "img-cards", :alt => "") %>
-          <div class="caption">
-            <h4><%= participant.event.name.capitalize %></h4>
-
-            <p class="label-about-desc-opos">Date: <%= participant.event.date%> at <%=participant.event.time.strftime("%H:%M")%></p>
-            <p class="label-about-desc-opo">Price: <%= participant.event.price%> €</p>
-            <%= link_to 'Read More', "/event/"+participant.event.id.to_s %>
-            </div>
-          </div>
-        </div>
-
-          <% end %>
+								<p class="label-about-desc-opos">Date: <%= participant.event.date%> at <%=participant.event.time.strftime("%H:%M")%></p>
+								<p class="label-about-desc-opo">Price: <%= participant.event.price%> €</p>
+							</div>
+						</div>
+					</div>
+							
+        <% end %>
       </div>
 		</div>
 	</div>
