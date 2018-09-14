@@ -55,12 +55,12 @@ img {
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: .2s ease;
     background-color: #ebecee;
   }
 
   .preview-image-left:hover .overlay, .preview-image-right:hover .overlay {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
   .text-cards {
