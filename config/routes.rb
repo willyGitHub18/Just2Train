@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'event/:id', to: 'events#show', as: "event"
   post 'event_participants', to: 'event_participants#create', as: "event_participants"
 
-  devise_for :users, :controllers => { :registrations => "devise/registrations" }
+  devise_for :users, :controllers => { :registrations => 'users/registrations' }
 
   resources :events
   resources :locations
@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  resources :users
+  resources :users, param: :username
 
 end

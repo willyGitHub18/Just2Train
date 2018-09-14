@@ -1,3 +1,7 @@
+require 'mailjet'
+
+require 'mail'
+
 class EventParticipantsController < ApplicationController
 
   def create
@@ -10,6 +14,7 @@ class EventParticipantsController < ApplicationController
     @event_participant.is_admin = false
 
     if @event_participant.save
+      UserMailer.event_participant_email(current_user.email).deliver
       flash[:notice] = "Thank you your are now registered. We are counting on your presence ;)"
       redirect_to events_path
     else
