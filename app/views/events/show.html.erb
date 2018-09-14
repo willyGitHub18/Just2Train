@@ -23,14 +23,7 @@
 
                 <div class="register-button button-events-div">
                     <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
-                    <%= link_to 'Modify event', edit_location_path(@event.location), class: "btn btn-warning " %>
                 </div>
-
-
-
-                    <div class="edit-link">
-                        <%= link_to 'Modify event', edit_location_path(@event.location), class: "btn btn-primary" %>
-                    </div>
                 <div class="row">
 
                     <div class="col-md-3">
@@ -99,6 +92,9 @@
                             var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
                             </script>
                             </div>
+                            <div class="register-button button-events-div">
+                                <%= link_to 'Modify Event', edit_location_path(@event.location), class: "btn btn-dark button-events-edit" %>
+                            </div>
 
                     </div>
 
@@ -121,7 +117,10 @@
                             <% end %>
                         <% end %>
                     </div>
-                    </div>
+                     <div class="register-button button-events-div">
+                                <%= link_to 'Cancel Participation', root_path, class: "btn btn-dark button-participation-cancel" %>
+                            </div>
+                    
                 </div>
             </div>
 
