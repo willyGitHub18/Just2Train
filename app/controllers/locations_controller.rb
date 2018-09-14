@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
       @location.save
       create_participant
       flash[:success] = "Congrats, your event has been created"
-      redirect_to events_path
+      redirect_to event_path(@location.id)
     end
 
     def edit
