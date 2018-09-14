@@ -28,7 +28,7 @@ class EventParticipantsController < ApplicationController
       end
     end
   end
-  def delete
+  
   private
   def event_participants_params
     params.require(:event_participant).permit(:is_creator, :is_admin, :event_id, :user_id)
