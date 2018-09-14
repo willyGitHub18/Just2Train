@@ -19,4 +19,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+$ (document).on('turbolinks: load', function () {
+})
+
 $('.dropdown-toggle').dropdown()
