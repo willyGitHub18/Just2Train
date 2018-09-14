@@ -1,31 +1,39 @@
 <!-- Main wrapper -->
 <div class="wrapper">
-    <!-- Navbar ------------------------->
-    <%= render 'shared/navbar' %>
+<!-- Navbar -->
+<%= render 'shared/navbar' %>
+  <!-- Body container -->
+  <body>
+    <!-- Small generic banner -->
+    <div class="small-banner jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Events&nbsp;</h2>
+        <p class="lead">Find your training session</p>
+      </div>
+    </div><!-- Body container -->
 
-    <body>  <!-- Body container -->
-
-        <div class="event-image">
-            <%= image_tag 'coupon.jpg', class: "image-event" %>
-        </div>
-
-        <div class="container">
+          <div class="container">
             <div class="event-wrapper">
                 <div class="event-period">
                     <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
                 </div>
                 <div class="event-title-div">
-                    <h1 class="event-title"><%= @event.name.capitalize %></h1>
+                    <h2 class="event-title"><%= @event.name.capitalize %></h2>
                 </div>
+
                 <div class="register-button button-events-div">
                     <%= link_to ' Count Me In ', event_participants_path(:event_id => @event.id), class: "btn btn-dark button-events", method: :post %>
+                    <%= link_to 'Modify event', edit_location_path(@event.location), class: "btn btn-warning " %>
                 </div>
+
+
+
                     <div class="edit-link">
                         <%= link_to 'Modify event', edit_location_path(@event.location), class: "btn btn-primary" %>
                     </div>
-                <div class="event-container">
+                <div class="row">
 
-                    <div class="event-info">
+                    <div class="col-md-3">
 
                         <div class="event-detail">
                             <div class="event-activity">
@@ -66,8 +74,8 @@
 
                     </div>
 
-                    <div class="event-location-board-div">
-                        <div class="event-location-board">
+                    <div class="col-md-6">
+
 
                             <div class="event-location">
                                 <div class="event-location-name">
@@ -91,9 +99,11 @@
                             var marker = L.marker(['<%= @event.location.latitude %>', '<%= @event.location.longitude %>']).addTo(mymap);
                             </script>
                             </div>
-                        </div>
+
                     </div>
-                    <div class='participant-box-more'>
+
+
+                    <div class="col-md-3">
                     <div class='participant-box'>
                         <div class="participant-disp">
                             Participants :
