@@ -21,7 +21,7 @@ class EventParticipantsController < ApplicationController
         redirect_to events_path
       else
         flash.now[:warning] = "A problem occured while you submit your registration, please try again"
-        render event_path
+        render event_path(chosen_event)
       end
     end
   end
