@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_102123) do
+ActiveRecord::Schema.define(version: 2018_09_14_170506) do
 
   create_table "activities", force: :cascade do |t|
     t.string "activity_name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_09_11_102123) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.decimal "price", default: "0.0"
+    t.decimal "price"
     t.date "date"
     t.integer "nb_participant"
     t.integer "level"
