@@ -21,14 +21,14 @@ class EventParticipantsController < ApplicationController
       if @event_participant.save
         UserMailer.event_participant_email(current_user.email).deliver
         flash[:notice] = "Thank you your are now registered. We are counting on your presence ;)"
-        redirect_to events_path
+        redirect_to event_path(chosen_event)
       else
         flash.now[:warning] = "A problem occurred while submitting your registration, please try again"
         render event_path(chosen_event)
       end
     end
   end
-  
+
   private
   def event_participants_params
     params.require(:event_participant).permit(:is_creator, :is_admin, :event_id, :user_id)
