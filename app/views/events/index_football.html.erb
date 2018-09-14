@@ -1,0 +1,51 @@
+<!-- Main wrapper -->
+<div class="wrapper">
+<!-- Navbar -->
+<%= render 'shared/navbar' %>
+  <!-- Body container -->
+  <body>
+    <!-- Small generic banner -->
+    <div class="small-banner jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Events&nbsp;</h2>
+        <p class="lead">Find your training session</p>
+      </div>
+    </div>
+    <!-- End of small generic banner -->
+    <div class="container">
+      <div class="row">
+
+        <div class="events-container">
+            <% @events.each do |event| %>
+                <% if event.activity.activity_name == "Football" %>
+                    <div class="col-md-4">
+                        <div class="events-element">
+                            <div class="thumbnail">
+                              <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                            </div>
+                            <div class="events-content">
+                              <div class="events-title"><h3><%= event.name %></h3></div>
+                                <time class="events-period">
+                                    <%= event.date.strftime("%a, %d %b") %> AT <%= event.time.strftime("%H:%M") %>
+                                </time>
+                                      <div class="caption">
+                                        <p class="label-about-desc-opos"><%= event.location.place_name %> <%= event.location.city %></p>
+                                        <p class="label-about-desc-opos"><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
+                                        <p class="label-about-desc-opos">Level: <%= event.level %> - Price: <%= number_to_currency(event.price) %></p>
+                                        <%= link_to 'Read More', "/event/"+event.id.to_s %>
+                                      </div>
+                            </div> <!-- End for event-content -->
+                        </div><!-- End for event-element -->
+                    </div> <!-- End for col-sm-6 col-md-4 -->
+                <% end %>
+            <% end %>
+        </div> <!-- End for event- container -->
+
+    </div> <!-- End for row -->
+    </div> <!-- End for container -->
+
+  </body>
+
+  <footer>
+    <%= render 'shared/footer' %>
+  </footer>

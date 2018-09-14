@@ -9,6 +9,26 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def index_futsal
+    @events = Event.all
+  end
+
+  def index_cyclism
+    @events = Event.all
+  end
+
+  def index_running
+    @events = Event.all
+  end
+
+  def index_basketball
+    @events = Event.all
+  end
+
+  def index_football
+    @events = Event.all 
+  end
+
   def show
     @event = Event.find(params[:id])
     @users = User.all
