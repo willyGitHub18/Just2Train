@@ -12,7 +12,7 @@
 /* Profile sidebar */
 .profile-sidebar {
 
-  background: #003552;
+  background-color: #3b2c85;
   height: 100%;
   border-radius: 5px;
   -moz-box-shadow: 2px 2px 5px 0px #9b9b9b;
@@ -20,6 +20,7 @@
   -o-box-shadow: 2px 2px 5px 0px #9b9b9b;
   box-shadow: 2px 2px 5px 0px #9b9b9b;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=#9b9b9b, Direction=134, Strength=5);
+  overflow: auto;
 }
 
 .profile-userpic img {
@@ -124,6 +125,11 @@
   background: white !important;
   height: 100%;
 
+}
+
+.profile-you-are {
+  text-align: center;
+  margin: 0px 0px 30px
 }
 
 .label-about{
