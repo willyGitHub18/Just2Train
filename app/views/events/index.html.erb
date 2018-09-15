@@ -20,7 +20,21 @@
             <div class="col-md-4">
                 <div class="events-element">
                     <div class="thumbnail">
-                      <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                        <% if event.activity.activity_name == "Futsal" %>
+                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                        <% end %>
+                        <% if event.activity.activity_name == "Basketball" %>
+                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                        <% end %>
+                        <% if event.activity.activity_name == "Running" %>
+                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                        <% end %>
+                        <% if event.activity.activity_name == "Cyclisme" %>
+                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                        <% end %>
+                        <% if event.activity.activity_name == "Football" %>
+                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                        <% end %>
                     </div>
                     <div class="events-content">
                       <div class="events-title"><h3><%= event.name %></h3></div>
