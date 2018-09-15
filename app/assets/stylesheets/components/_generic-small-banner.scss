@@ -1,6 +1,6 @@
 .small-banner {
   min-height: 40vh;
-  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 68%, rgba(78,120,173,0.47102591036414565) 100%), image-url('just2train-banner.jpg');
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 0%, rgba(78,120,173,0.4) 90%), image-url('just2train-banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: #EBECEE;
@@ -10,6 +10,59 @@
   align-items: center;
   text-align: center;
 }
+
+.small-banner-basket {
+  min-height: 40vh;
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 0%, rgba(78,120,173,0.4) 90%), image-url('basket-cover.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EBECEE;
+  display :flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.small-banner-cyclism {
+  min-height: 40vh;
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 0%, rgba(78,120,173,0.4) 90%), image-url('cyclism-cover.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EBECEE;
+  display :flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.small-banner-football {
+  min-height: 40vh;
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 0%, rgba(78,120,173,0.4) 90%), image-url('soccer.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EBECEE;
+  display :flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.small-banner-running {
+  min-height: 40vh;
+  background-image: linear-gradient(135deg, rgba(20,19,36,1) 0%, rgba(49,30,60,0.3477766106442577) 0%, rgba(78,120,173,0.4) 90%), image-url('running.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EBECEE;
+  display :flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
 
 
 .container-intro {

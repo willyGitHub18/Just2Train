@@ -2,8 +2,8 @@
 <div class="container">
     <div class="preview-grid">
         <div class="header">
-            <h2>Responsive Image Grid</h2>
-            <p>Resize the browser window to see the responsive effect.</p>
+            <h2>Connect with people, sport together !</h2>
+            <p>Just2Train helps you to connect with people around the world. Start now! </p>
         </div>
 
         <div class="row">
@@ -11,19 +11,19 @@
                 <div class="preview-image-left" id="cyclism">
                     <%= image_tag 'cyclism.jpg' %>
                     <div class="overlay">
-                        <h3 class="text-cards">B I K I N G</h3>
+                        <%= link_to cyclism_path, class:"text-cards" do %><i class="fas fa-bicycle"> CYCLISM </i><%end%>
                     </div>
                 </div>
                 <div class="preview-image-left" id="foot">
                     <%= image_tag 'foot.jpg' %>
                     <div class="overlay">
-                        <h3 class="text-cards">F O O T B A L L</h3>
+                        <%= link_to football_path, class:"text-cards" do %><i class="fas fa-futbol"> FOOTBALL </i><%end%>
                     </div>
                 </div>
                 <div class="preview-image-left">
                     <%= image_tag 'running.jpg' %>
                     <div class="overlay">
-                        <h3 class="text-cards">R U N N I N G</h3>
+                      <%= link_to running_path, class:"text-cards" do %><i class="fas fa-shoe-prints"> RUNNING </i><%end%>
                     </div>
                 </div>
             </div>
@@ -33,14 +33,14 @@
                 <div class="preview-image-right">
                     <%= image_tag 'basket.jpg' %>
                     <div class="overlay">
-                        <h3 class="text-cards">B A S K E T B A L L </h3>
+                        <%= link_to basketball_path, class:"text-cards" do %><i class="fas fa-basketball-ball"> BASKETBALL</i><%end%>
                     </div>
                 </div>
 
                 <div class="preview-image-right">
                     <%= image_tag 'swiming.png' %>
                     <div class="overlay">
-                        <h3 class="text-cards">AND MANY OTHERS..</h3>
+                        <%= link_to events_path, class:"text-cards" do %><i class="fas fa-angle-double-right"> AND MANY OTHERS</i><%end%>
                     </div>
                 </div>
             </div>
