@@ -35,22 +35,22 @@
 
                 <div class="field">
                   <p> Address </p>
-                  <input type="text" placeholder="Address" id="autocomplete_address"><br />
-                  <%= l.text_field :category, placeholder: "Location Type (indoor, outdoor, field, ...)" %>
-                  <%= l.text_field :place_name, placeholder: "Location Name" %><br />
-                  <%= l.text_field :street1, placeholder: "Address Line 1", id: :route %>
-                  <%= l.text_field :street2, placeholder: "Address Line 2" %><br />
+                    <input type="text" placeholder="Address" id="autocomplete_address"><br />
+                      <%= l.text_field :category, placeholder: "Location Type (indoor, outdoor, field, ...)" %>
+                      <%= l.text_field :place_name, placeholder: "Location Name" %><br />
+                      <%= l.text_field :street1, placeholder: "Address Line 1", id: :route %>
+                      <%= l.text_field :street2, placeholder: "Address Line 2" %><br />
                   <div class="field two-inline">
-                  <%= l.text_field :city, placeholder: "City", id: :locality %>
-                  <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
+                    <%= l.text_field :city, placeholder: "City", id: :locality %>
+                    <%= l.text_field :zip, placeholder: "Zip/Postal Code", id: :postal_code %><br />
                   </div>
-                  <%= l.text_field :latitude, placeholder: "Latitude", id: :latitude, type: "hidden" %>
-                  <%= l.text_field :longitude, placeholder: "Longitude", id: :longitude, type: "hidden" %>
+                    <%= l.text_field :latitude, placeholder: "Latitude", id: :latitude, type: "hidden" %>
+                    <%= l.text_field :longitude, placeholder: "Longitude", id: :longitude, type: "hidden" %>
                   <div class= "actions">
-                  <%= l.submit "Create", :class=> "btn-primary" %>
+                    <%= l.submit "Create", :class=> "btn-primary" %>
                   </div>
                 <% end %>
-                </div>
+                  </div>
                 <%= link_to "Go back", :back %>
 
               </div>
