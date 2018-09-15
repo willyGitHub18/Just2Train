@@ -13,47 +13,49 @@
     </div>
     <!-- End of small generic banner -->
     <div class="container">
-      <div class="row">
+        <div class="row">
 
-        <div class="events-container">
-            <% @events.each do |event| %>
-            <div class="col-md-4">
-                <div class="events-element">
-                    <div class="thumbnail">
-                        <% if event.activity.activity_name == "Futsal" %>
-                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
-                        <% end %>
-                        <% if event.activity.activity_name == "Basketball" %>
-                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
-                        <% end %>
-                        <% if event.activity.activity_name == "Running" %>
-                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
-                        <% end %>
-                        <% if event.activity.activity_name == "Cyclisme" %>
-                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
-                        <% end %>
-                        <% if event.activity.activity_name == "Football" %>
-                            <%= image_tag 'coupon.jpg', :class => "img-cards" %>
-                        <% end %>
-                    </div>
-                    <div class="events-content">
-                      <div class="events-title"><h3><%= event.name %></h3></div>
-                        <time class="events-period">
-                            <%= event.date.strftime("%a, %d %b") %> AT <%= event.time.strftime("%H:%M") %>
-                        </time>
-                              <div class="caption">
-                                <p class="label-about-desc-opos"><%= event.location.place_name %> <%= event.location.city %></p>
-                                <p class="label-about-desc-opos"><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
-                                <p class="label-about-desc-opos">Level: <%= event.level %> - Price: <%= number_to_currency(event.price) %></p>
-                                <%= link_to 'Read More', "/event/"+event.id.to_s %>
-                              </div>
-                    </div> <!-- End for event-content -->
-                </div><!-- End for event-element -->
-            </div> <!-- End for col-sm-6 col-md-4 -->
-            <% end %>
-        </div> <!-- End for event- container -->
+            <div class="events-container">
+                <% @events.each do |event| %>
+                    <div class="col-md-4 preview-image-left">
+                        <div class="overlay">
+                            <h3 class="text-cards-profil"><%= link_to 'Read More', "/event/"+event.id.to_s, class: "stop-this-style" %></h3>
+                        </div>	
+                        <div class="events-element">
+                            <div class="thumbnail">
+                                <% if event.activity.activity_name == "Futsal" %>
+                                    <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                                <% end %>
+                                <% if event.activity.activity_name == "Basketball" %>
+                                    <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                                <% end %>
+                                <% if event.activity.activity_name == "Running" %>
+                                    <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                                <% end %>
+                                <% if event.activity.activity_name == "Cyclisme" %>
+                                    <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                                <% end %>
+                                <% if event.activity.activity_name == "Football" %>
+                                    <%= image_tag 'coupon.jpg', :class => "img-cards" %>
+                                <% end %>
+                            </div>
+                            <div class="events-content">
+                            <div class="events-title"><h3><%= event.name %></h3></div>
+                                <time class="events-period">
+                                    <%= event.date.strftime("%a, %d %b") %> AT <%= event.time.strftime("%H:%M") %>
+                                </time>
+                                    <div class="caption">
+                                        <p class="label-about-desc-opos"><%= event.location.place_name %> <%= event.location.city %></p>
+                                        <p class="label-about-desc-opos"><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
+                                        <p class="label-about-desc-opos">Level: <%= event.level %> - Price: <%= number_to_currency(event.price) %></p>
+                                    </div>
+                            </div> <!-- End for event-content -->
+                        </div><!-- End for event-element -->
+                    </div> <!-- End for col-sm-6 col-md-4 -->
+                <% end %>
+            </div> <!-- End for event- container -->
 
-    </div> <!-- End for row -->
+        </div> <!-- End for row -->
     </div> <!-- End for container -->
 
   </body>
