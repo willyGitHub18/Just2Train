@@ -42,10 +42,10 @@
             <%= l.text_field :longitude, placeholder: "Longitude", id: :longitude, type: "hidden" %>
             <div class= "actions">
             <%= l.submit "Save changes" %>
-            <% if !is_creator? %>
-              <%= link_to "Delete", @location, method: :delete, data: { confirm: "Are you sure?" } %>
-            <% end %>
             </div>
+            <% if !is_creator? %>
+            <%= link_to "Delete", @location, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
           <% end %>
           </div>
           <%= link_to "Go back", :back %>
