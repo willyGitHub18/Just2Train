@@ -30,7 +30,7 @@
   text-align: center;
   position: relative;
   width: 100%;
-  height: 200px;
+
 }
 
 .events-content-scroll {
@@ -43,6 +43,7 @@
 
 .events-title-scroll {
   font-weight: bold;
+  word-wrap: break-word;
 }
 
 .events-description-scroll {
