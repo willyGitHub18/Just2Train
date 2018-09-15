@@ -24,7 +24,7 @@
                               <%= image_tag 'soccer_event.jpg', :class => "img-cards" %>
                             </div>
                             <div class="events-content">
-                              <div class="events-title"><h3><%= event.name %></h3></div>
+                              <div class="events-title"><h3><%= event.name.capitalize %></h3></div>
                                 <time class="events-period">
                                     <%= event.date.strftime("%a, %d %b") %> AT <%= event.time.strftime("%H:%M") %>
                                 </time>

@@ -7,7 +7,7 @@
     <!-- Small generic banner -->
     <div class="small-banner jumbotron-fluid">
       <div class="container">
-        <h2 class="display-4"> Al Events&nbsp;</h2>
+        <h2 class="display-4"> All Events&nbsp;</h2>
         <p class="lead">Find your next training session</p>
       </div>
     </div><!-- Body container -->
@@ -123,7 +123,7 @@
                                 <% if participant.user.id != current_user.id %>
                                     <div class='participant-person'>
                                         <div class="participant-name">
-                                            <%= participant.user.username %>
+                                            <%= participant.user.username.capitalize %>
                                         </div>
                                         <div >
                                             <span class= "btn btn-info"><i class="fas fa-comment"> Message</i></span>
