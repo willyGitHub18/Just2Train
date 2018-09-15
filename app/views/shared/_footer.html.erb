@@ -1,11 +1,59 @@
 <footer>
-  <div class="footer-left">
-    <p>Jut2Train</p>
-    <p>About Just2Train</p>
-    <P>Contact Us</p>
-    <p>Join Us</p>
+<div class="footer-left">
+  <ul>
+
+    <li class="footer-item">
+      About Just2Train
+    </li>
+
+    <li class="footer-item">
+      <%= link_to events_path do %>All events<%end%>
+    </li>
+
+    <li class="footer-item">
+      <%= link_to cyclism_path do %> Cyclism</i><%end%>
+    </li>
+
+    <li class="footer-item">
+      <%= link_to football_path do %> Football<%end%>
+    </li>
+
+    <li class="footer-item">
+      <%= link_to running_path do %> Running </i><%end%>
+    </li>
+
+    <li class="footer-item">
+      <%= link_to basketball_path do %> Basketball<%end%>
+    </li>
+
+  </ul>
+</div>
+
+
+
+<div class="footer-right">
+  <ul>
+    <li class="footer-item">
+      <%= link_to new_user_session_path do %>Sign In<%end%>
+    </li>
+
+    <li class="footer-item">
+      <%= link_to new_user_registration_path do %>Sign up<%end%>
+    </li>
+
+    <li class="footer-item">
+      <%= link_to "Create a meet up", new_location_path %>
+    </li>
+
+
+    <li class="icons-footer"><i class="fab fa-twitter-square"> </i> <i class="fab fa-facebook"></i>  <i class="fab fa-github"></i>
+
+
+    <li class="footer-item">
+      Jut2Train Connecting people, sporting together, All rights reserved ©, 2018
+    </li>
+  </ul>
+
   </div>
-  <div class="footer-right">
-    <p>All right reserved</p>
   </div>
 </footer>

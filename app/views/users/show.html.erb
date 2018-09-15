@@ -26,7 +26,7 @@
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-success btn-sm button-prof-edit" %>
+					<%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-outline-info" %>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
@@ -42,7 +42,7 @@
               <%= current_user.zip%>
               <%= current_user.city%></p>
 					<% end %>
-			
+
 				</div>
 				<!-- END MENU -->
 			</div>
@@ -55,7 +55,7 @@
           <div class="col-sm-6 col-md-4 preview-image-left">
 						<div class="overlay">
                 <h3 class="text-cards-profil"><%= link_to 'Read More', "/event/"+participant.event.id.to_s, class: "stop-this-style" %></h3>
-            </div>	
+            </div>
 						<div class="thumbnail">
 							<%= image_tag("sporting.jpg", :class => "img-cards", :alt => "") %>
 							<div class="caption">
@@ -66,7 +66,7 @@
 							</div>
 						</div>
 					</div>
-							
+
         <% end %>
       </div>
 		</div>
