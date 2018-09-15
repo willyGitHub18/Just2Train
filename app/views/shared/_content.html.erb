@@ -13,31 +13,32 @@
                       <% @events.each do |event| %>
                       <div class="events-grid-scroll preview-image-left text-center">
                         <div class="overlay">
-                            <h3 class="text-cards-profil over-more-down"><%= link_to 'Read More', "/event/"+event.id.to_s, class: "stop-this-style" %></h3>
+                            <h3 class="text-cards-profil"><%= link_to 'Read More', "/event/"+event.id.to_s, class: "stop-this-style" %></h3>
                         </div>	
                           <div class="events-element-scroll">
-                              <div class="events-image-scroll">
-                                <% if event.activity.activity_name == "Futsal" %>
-                                    <%= image_tag 'futsal_event.jpg', :class => "picture-activity-scroll" %>
-                                <% end %>
-                                <% if event.activity.activity_name == "Basketball" %>
-                                    <%= image_tag 'basket_event.jpg', :class => "picture-activity-scroll" %>
-                                <% end %>
-                                <% if event.activity.activity_name == "Running" %>
-                                    <%= image_tag 'run_event.jpg', :class => "picture-activity-scroll" %>
-                                <% end %>
-                                <% if event.activity.activity_name == "Cyclisme" %>
-                                    <%= image_tag 'cycling_event.jpg', :class => "picture-activity-scroll" %>
-                                <% end %>
-                                <% if event.activity.activity_name == "Football" %>
-                                    <%= image_tag 'soccer_event.jpg', :class => "picture-activity-scroll" %>
-                                <% end %>
-                              </div>
+                              
                               <div class="events-content-scroll">
+                                <div class="spacing-event-disp">
+                                    <% if event.activity.activity_name == "Futsal" %>
+                                        <%= image_tag 'futsal_event.jpg' %>
+                                    <% end %>
+                                    <% if event.activity.activity_name == "Basketball" %>
+                                        <%= image_tag 'basket_event.jpg' %>
+                                    <% end %>
+                                    <% if event.activity.activity_name == "Running" %>
+                                        <%= image_tag 'run_event.jpg' %>
+                                    <% end %>
+                                    <% if event.activity.activity_name == "Cyclisme" %>
+                                        <%= image_tag 'cycling_event.jpg' %>
+                                    <% end %>
+                                    <% if event.activity.activity_name == "Football" %>
+                                        <%= image_tag 'soccer_event.jpg' %>
+                                    <% end %>
+                                </div>
                                   <time class="events-period-scroll">
                                       <%= event.date.strftime("%a, %d %b") %> at <%= event.time.strftime("%H:%M") %>
                                   </time>
-                                  <div class="events-title-scroll"><%= event.name.capitalize %></div>
+                                  <div class="events-title-scroll spacing-event-disp-large"><%= event.name.capitalize %></div>
                                   <div class="events-description-scroll">
                                       <p><%= event.location.place_name %> <%= event.location.city %></p>
                                       <p><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
