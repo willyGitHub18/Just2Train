@@ -9,10 +9,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+
   #POST /resource
    def create
      super
-     UserMailer.welcome_email(current_user.email).deliver
+      UserMailer.welcome_email(current_user.email).deliver unless current_user.try(:email) == nil
    end
 
   # GET /resource/edit
