@@ -14,10 +14,6 @@
 
           <div class="container">
             <div class="event-wrapper">
-                <div class="event-period">
-                    <span><%= @event.date.strftime("%A %b %e %Y") %> </span>
-                </div>
-
 
                 <div class="row">
 
@@ -56,6 +52,9 @@
                                 </div>
                                 <div>
                                     <%= @event.time.strftime("%H:%M") %>
+                                </div>
+                                <div class="mini-date-display">
+                                    <span><%= @event.date.strftime("%e %b %Y") %> </span>
                                 </div>
                             </div>
                         </div>

@@ -18,7 +18,10 @@
         <div class="events-container">
             <% @events.each do |event| %>
                 <% if event.activity.activity_name == "Basketball" %>
-                    <div class="col-md-4">
+                    <div class="col-md-4 preview-image-left">
+                      <div class="overlay">
+                          <h3 class="text-cards-profil"><%= link_to 'Read More', "/event/"+event.id.to_s, class: "stop-this-style" %></h3>
+                      </div>	
                         <div class="events-element">
                             <div class="thumbnail">
                               <%= image_tag 'basket_event.jpg', :class => "img-cards" %>
@@ -32,7 +35,6 @@
                                         <p class="label-about-desc-opos"><%= event.location.place_name %> <%= event.location.city %></p>
                                         <p class="label-about-desc-opos"><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
                                         <p class="label-about-desc-opos">Level: <%= event.level %> - Price: <%= number_to_currency(event.price) %></p>
-                                        <%= link_to 'Read More', "/event/"+event.id.to_s %>
                                       </div>
                             </div> <!-- End for event-content -->
                         </div><!-- End for event-element -->

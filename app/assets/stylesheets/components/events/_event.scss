@@ -55,13 +55,13 @@ margin-bottom: 15px;
   margin-top: 15px;
   font-weight: bold;
   border-radius: 5px;
-  background-color: #e4380dea;
+  background-color: #e73b07db;
   border: none;
   box-shadow: #dafdff 0px 0px 3px 1px ;
 }
 
 .button-participation-cancel:hover {
-  background-color: #ffbf36b8;
+  background-color: #e9280fea;
   box-shadow: #ddfdff 0px 0px 5px 2px ;
 }
 
@@ -101,7 +101,7 @@ margin-bottom: 15px;
   color: #2d3142;
   padding: 10px;
   border-radius: 10%;
-  box-shadow: #dafdff 0px 0px 5px 0px ;
+  box-shadow: #999fa0 0px 0px 5px 0px ;
   font-size: 15px;
   font-weight: bold;
 }
@@ -112,6 +112,13 @@ margin-bottom: 15px;
 
 .event-day-calendar {
   font-size: 18px;
+}
+
+.mini-date-display {
+  margin-top: 5px;
+  font-weight: normal;
+  font-size: 10px;
+
 }
 
 .event-location-board-div {
