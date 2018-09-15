@@ -8,13 +8,13 @@
 
 Activity.create([{ activity_name: "Futsal" }, { activity_name: "Cyclisme" }, { activity_name: "Running" }, { activity_name: "Basketball" }, { activity_name: "Football" }])
 
-password = 'qwerty'
-1.upto(5) do |i|
-  User.create(
-    username: "Joe#{i}",
-    email: "user#{i}@example.com",
-    phone: "0102030405",
-    password: password,
-    password_confirmation: password
-  )
-end
+# password = 'qwerty'
+# 1.upto(5) do |i|
+#   User.create(
+#     username: "Joe#{i}",
+#     email: "user#{i}@example.com",
+#     phone: "0102030405",
+#     password: password,
+#     password_confirmation: password
+#   )
+# end
