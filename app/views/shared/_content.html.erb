@@ -11,7 +11,10 @@
               <div class="scroll-container">
                   <div class="events-container-scroll">
                       <% @events.each do |event| %>
-                      <div class="events-grid-scroll">
+                      <div class="events-grid-scroll preview-image-left text-center">
+                        <div class="overlay">
+                            <h3 class="text-cards-profil over-more-down"><%= link_to 'Read More', "/event/"+event.id.to_s, class: "stop-this-style" %></h3>
+                        </div>	
                           <div class="events-element-scroll">
                               <div class="events-image-scroll">
                                 <% if event.activity.activity_name == "Futsal" %>
@@ -32,16 +35,15 @@
                               </div>
                               <div class="events-content-scroll">
                                   <time class="events-period-scroll">
-                                      <%= event.date.strftime("%a, %d %b") %> AT <%= event.time.strftime("%H:%M") %>
+                                      <%= event.date.strftime("%a, %d %b") %> at <%= event.time.strftime("%H:%M") %>
                                   </time>
-                                  <div class="events-title-scroll"><%= event.name %></div>
+                                  <div class="events-title-scroll"><%= event.name.capitalize %></div>
                                   <div class="events-description-scroll">
                                       <p><%= event.location.place_name %> <%= event.location.city %></p>
                                       <p><%= event.activity.activity_name %> - <%= event.nb_participant %> people</p>
                                       <p>Level: <%= event.level %> - Price: <%= number_to_currency(event.price) %></p>
                                   </div>
                                   <div class="events-footer-scroll">
-                                      <%= link_to 'Read More', "/event/"+event.id.to_s %>
                                   </div>
                               </div>
                           </div>
