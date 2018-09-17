@@ -1,24 +1,54 @@
-# README
+# Just2Train
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app designed to get you to train hard
 
-Things you may want to cover:
+### To make it work
 
-* Ruby version
+Just participate in an event or create one. [Enjoy the magic !](http://just2train.herokuapp.com)
 
-* System dependencies
+### What it does:
 
-* Configuration
+This app is and will be your guide
 
-* Database creation
+* Just visit the website (again (http://just2train.herokuapp.com/event/4))
+* Don't forget to create your user account (otherwise your experience will be pretty limited)
+* Navigate, dive in, but most importantly: create a ****** event (just to know what it feels like to be [THE BOSS](https://gph.is/18tNrRq))
+* Try to checkout out already existing events
+* Meditate, eat a banana
 
-* Database initialization
+### What is doesn't do
 
-* How to run the test suite
+- Pancakes, sorry but what where you expecting? (But you still can bring pancakes to your event, or a beer, just sayin')
 
-* Services (job queues, cache servers, search engines, etc.)
+### Technology
 
-* Deployment instructions
+A pretty framework called
 
-* ...
+```
+Rails
+
+```
+[Front-End](https://gph.is/29dWhcS)
+```
+  Some HTML5, CSS3 and JavaScript
+
+```
+[Back-End](https://gph.is/1CvEBlq)
+
+```
+I have no idea what we have done
+Naaaaa seriously, Ruby, always Ruby
+
+```
+Other tools but we cannot disclose the particulars yet (MailJet...)
+
+
+### The Program
+
+Get with the program Stan !
+
+### What else?
+
+Take a coffee and whatch a little video (don't freak out it will only help you understand)
+
+[Enjoy](https://vimeo.com/290235520)

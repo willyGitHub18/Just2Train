@@ -29,6 +29,12 @@ class EventParticipantsController < ApplicationController
     end
   end
 
+  def destroy
+    @event_participant = EventParticipant.find_by(user_id: current_user.id).destroy
+    flash[:success] = "Sad to see you leave..."
+    redirect_to root_path
+  end
+
   private
   def event_participants_params
     params.require(:event_participant).permit(:is_creator, :is_admin, :event_id, :user_id)
