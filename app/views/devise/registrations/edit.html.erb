@@ -4,6 +4,7 @@
   <%= render 'shared/navbar' %>
 
     <body>  <!-- Body container -->
+      <div class="container">
       <div class="form-container"><!-- Container for the form -->
         <div class="title-container">
           <h2>Edit <%= resource_name.to_s.humanize %></h2>
@@ -42,8 +43,12 @@
               <%= link_to "Go back", :back %>
             </div>
         </div><!-- End for container for the form -->
-    </body>  <!-- End for Body container -->
+      </div>
 
 
 </div> <!--End of wrapper -->
+</body>  <!-- End for Body container -->
+
+<footer>
     <%= render 'shared/footer' %>
+</footer>
