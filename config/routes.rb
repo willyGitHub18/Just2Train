@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get 'events/football', to: 'events#index_football', as: "football"
 
   get 'event/:id', to: 'events#show', as: "event"
-  
+
   post 'event_participants', to: 'event_participants#create', as: "event_participants"
+  delete 'event_participants', to: 'event_participants#destroy', as: "event_participant"
 
   devise_for :users, :controllers => { :registrations => 'users/registrations' }
 
