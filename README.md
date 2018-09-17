@@ -10,7 +10,7 @@ Just participate in an event or create one. [Enjoy the magic !](http://just2trai
 
 This app is and will be your guide
 
-* Just visit the website (again (http://just2train.herokuapp.com/event/4))
+* Just visit the website (again (http://just2train.herokuapp.com))
 * Don't forget to create your user account (otherwise your experience will be pretty limited)
 * Navigate, dive in, but most importantly: create a ****** event (just to know what it feels like to be [THE BOSS](https://gph.is/18tNrRq))
 * Try to checkout out already existing events
