@@ -51,4 +51,4 @@ Get with the program Stan !
 
 Take a coffee and whatch a little video (don't freak out it will only help you understand)
 
-[Enjoy](https://vimeo.com/user64787107/review/290235520/cb4494dbd4)
+[Enjoy](https://vimeo.com/290235520)
